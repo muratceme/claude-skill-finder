@@ -13,7 +13,7 @@ A searchable, categorized directory of **Claude / Agent Skills** (`SKILL.md`) co
 ```bash
 npm install
 npm run collect        # ~5-10 min: clones ~800 repos sparsely into .cache/repos and writes site/data/
-npm run serve          # http://localhost:8080
+npm run serve          # http://localhost:8080  (another port: npm run serve -- 3000)
 ```
 
 Useful flags for the collector:
@@ -89,7 +89,7 @@ site/data/                 generated data (committed so Pages can serve it)
 
 **Claude Skill Finder**, GitHub'daki Claude / Agent Skill'lerini (`SKILL.md`) otomatik toplayıp kategorilere ayıran, tarayıcıda arama yapılabilen ve her skill için kurulum komutları gösteren statik bir sitedir.
 
-- `npm install && npm run collect && npm run serve` ile yerelde çalışır (http://localhost:8080).
+- `npm install && npm run serve` ile yerelde çalışır (http://localhost:8080; başka port için `npm run serve -- 3000`). Veri repoda hazır; yenilemek için `npm run collect`.
 - GitHub Pages'te yayınlamak için: repo ayarlarında **Settings → Pages → Source: GitHub Actions** seçin, ardından **Actions → Update skills data → Run workflow** ile ilk veriyi üretin. Veri her gün otomatik yenilenir ve site otomatik yayınlanır.
 - Yeni kaynak eklemek için `scripts/sources.json`, kategori kurallarını değiştirmek için `scripts/taxonomy.json` dosyasını düzenleyin.
 - Site arayüzü sağ üstteki düğmeyle Türkçe/İngilizce arasında geçiş yapar.
