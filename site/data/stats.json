@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-10-22T20:56:24.155Z",
+  "skills": 21577,
+  "repos": 709,
+  "reposScanned": 823,
+  "reposFailed": 29,
+  "official": 55,
+  "duplicatesMerged": 10122,
+  "durationSec": 202,
+  "apiUsed": false,
+  "errors": [
+    {
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "error": "duplicate of K-Dense-AI/scientific-agent-skills (same HEAD)"
+    },
+    {
+      "repo": "nowork-studio/notfair-plugin",
+      "error": "duplicate of nowork-studio/NotFair (same HEAD)"
+    },
+    {
+      "repo": "raintree-technology/claude-starter",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "huifer/Claude-Ally-Health",
+      "error": "duplicate of huifer/WellAlly-health (same HEAD)"
+    },
+    {
+      "repo": "openclaw/skills",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "nowork-studio/toprank",
+      "error": "duplicate of nowork-studio/NotFair (same HEAD)"
+    },
+    {
+      "repo": "HEOJUNFO/ai-film-crew",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "sickn33/agentic-awesome-skills",
+      "error": "duplicate of sickn33/antigravity-awesome-skills (same HEAD)"
+    },
+    {
+      "repo": "mturac/recsys-pipeline-architect",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "example-org/sdk",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "anthropics/anthropic-cookbook",
+      "error": "duplicate of anthropics/claude-cookbooks (same HEAD)"
+    },
+    {
+      "repo": "half144/cutaway",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "HoraceLuBFA/en-zh-translation-polish",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "uriva/find-scene-skill",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "fractalmind-ai/agent-manager-skill",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "wd041216-bit/ironclaw-agent-guard",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "glitternetwork/skills",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "username/pdf-analyzer",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "owner/repo",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "NovaCode37/claude-security-skills",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "livetennisapi/polymarket-tennis",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "livetennisapi/simmer-tennis-live-gate",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "michalparkola/tapestry-skills",
+      "error": "duplicate of michalparkola/tapestry-skills-for-claude-code (same HEAD)"
+    },
+    {
+      "repo": "jthack/threat-hunting-with-sigma-rules-skill",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "alirezarezvani/claude-code-skills-agents-factory",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "glebis/skill-studio",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "mturac/pluginpool",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "ofekron/better-agent",
+      "error": "not in cache (--no-fetch)"
+    },
+    {
+      "repo": "Get-Maito/newsletter-skills",
+      "error": "not in cache (--no-fetch)"
+    }
+  ],
+  "api": {
+    "enabled": true,
+    "reason": "",
+    "hasToken": true
+  }
+}

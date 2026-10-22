@@ -41,5 +41,5 @@
     "ignoreRepos": ["anthropics/claude-code", "anthropics/anthropic-sdk-python", "anthropics/anthropic-sdk-typescript", "anthropics/courses", "modelcontextprotocol/servers", "VoltAgent/voltagent", "VoltAgent/awesome-claude-code-subagents", "VoltAgent/official-mcp-servers", "VoltAgent/awesome-mcp-servers"],
     "ignoreOwnersForDiscovery": ["badges", "img.shields.io"]
   },
-  "skipPathPatterns": ["node_modules/", "/.gemini/", "/.codex/", "/.cursor/", "/.windsurf/", "/.kiro/", "/.github/", "/test/", "/tests/", "/fixtures/", "/__tests__/", "/dist/", "/build/", "/vendor/", "/examples/outputs/"]
+  "skipPathPatterns": ["node_modules/", "/i18n/", "/locales/", "/translations/", "/locale/", "/.gemini/", "/.codex/", "/.cursor/", "/.windsurf/", "/.kiro/", "/.github/", "/test/", "/tests/", "/fixtures/", "/__tests__/", "/dist/", "/build/", "/vendor/", "/examples/outputs/"]
 }

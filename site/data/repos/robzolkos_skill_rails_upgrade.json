@@ -1,0 +1,1 @@
+{"repo":"robzolkos/skill-rails-upgrade","skills":{"robzolkos-skill-rails-upgrade-root":{"description":"Analyze Rails application upgrade path. Checks current version, finds latest release, fetches upgrade notes and diffs, then performs selective upgrade preserving local customizations.","size":11879,"copies":[]}}}

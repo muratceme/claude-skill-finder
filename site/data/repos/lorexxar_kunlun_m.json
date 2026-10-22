@@ -1,0 +1,1 @@
+{"repo":"LoRexxar/Kunlun-M","skills":{"lorexxar-kunlun-m-kunlun-m-general":{"description":"当你要用 Kunlun-M（静态白盒漏洞扫描）扫描 PHP/JS/Solidity/Chrome Ext 源码，或需要通过命令 scan/generate 快速落地 source/sink（tamper/rule）并回归验证时使用。触发命令：kunlun.py scan / kunlun.py generate rule / kunlun.py generate tamper。","size":3324,"copies":[]}}}

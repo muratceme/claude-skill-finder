@@ -149,8 +149,20 @@
   function search(q) {
     const query = q.trim();
     if (!query) return null;
-    let hits = INDEX.search(query);
+    // exact/prefix matches first; only fall back to fuzzy matching when they are scarce
+    let hits = INDEX.search(query, { fuzzy: false });
+    if (hits.length < 8) {
+      const seen = new Set(hits.map(h => h.id));
+      for (const h of INDEX.search(query)) if (!seen.has(h.id)) { h.score *= 0.6; hits.push(h); }
+    }
     if (!hits.length) hits = INDEX.search(query, { combineWith: 'OR' });
+    // favour skills whose *name* matches the query terms over description-only matches
+    for (const h of hits) {
+      const terms = Object.entries(h.match || {});
+      if (!terms.length) continue;
+      const inName = terms.filter(([, fields]) => fields.includes('name')).length;
+      h.score *= 1 + 0.8 * (inName / terms.length);
+    }
     if (!hits.length && query.length <= 3) {
       const ql = query.toLowerCase();
       hits = DATA.skills.filter(s => s.name.toLowerCase().includes(ql)).map(s => ({ id: s.id, score: 1, terms: [query] }));

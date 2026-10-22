@@ -1,0 +1,1 @@
+{"repo":"imbue-ai/blueprint","skills":{"imbue-ai-blueprint-blueprint":{"description":"Start a new plan-writing session. Explores the codebase and asks clarifying questions.","size":4894,"copies":[]},"imbue-ai-blueprint-blueprint-generate":{"description":"End the Q&A phase and generate the plan. Use after the blueprint skill has gathered enough context.","size":1322,"copies":[]}}}

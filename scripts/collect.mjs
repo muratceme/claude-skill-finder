@@ -211,7 +211,9 @@ function extractSkills(r, dir, head, tree) {
     const parentHint = dirPath === '.' ? '' : dirPath.split('/').filter(seg => !/^(skills?|\.claude|src|lib|plugins?|packages?)$/i.test(seg)).join('/');
     const cat = categorize({ name, dir: dirName, description, meta: metaBits, pathHint: parentHint, repo: r.fullName });
 
-    const id = slug(`${r.owner}-${r.name}-${dirPath === '.' ? 'root' : dirPath}`);
+    // stable, readable id: owner-repo-path (common wrapper folders dropped to keep it short)
+    const idPath = dirPath === '.' ? 'root' : dirPath.split('/').filter(seg => !/^(skills?|\.claude|src|plugins?|packages?|bundled)$/i.test(seg)).join('-') || 'root';
+    const id = slug(`${r.owner}-${r.name}-${idPath}`);
     const plugin = enclosingPlugin(dir, dirPath);
     let marketplacePlugin;
     if (facts.marketplace && plugin) {
