@@ -1,0 +1,45 @@
+{
+  "$comment": "Seed repositories. kind=collection: repo contains SKILL.md files. kind=awesome: README links to other repos that get crawled too. Add new seeds here; the collector also discovers repos via awesome-list links and (when a GitHub token is available) GitHub topic/code search.",
+  "seeds": [
+    { "repo": "anthropics/skills", "kind": "collection", "official": true },
+    { "repo": "anthropics/claude-plugins-official", "kind": "collection", "official": true },
+    { "repo": "anthropics/claude-cookbooks", "kind": "collection", "official": true },
+    { "repo": "VoltAgent/awesome-agent-skills", "kind": "awesome" },
+    { "repo": "BehiSecc/awesome-claude-skills", "kind": "awesome" },
+    { "repo": "travisvn/awesome-claude-skills", "kind": "awesome" },
+    { "repo": "karanb192/awesome-claude-skills", "kind": "awesome" },
+    { "repo": "obviousworks/Claude-AI-skills-collection-2026", "kind": "awesome" },
+    { "repo": "ComposioHQ/awesome-claude-skills", "kind": "collection" },
+    { "repo": "alirezarezvani/claude-skills", "kind": "collection" },
+    { "repo": "glebis/claude-skills", "kind": "collection" },
+    { "repo": "GetBindu/awesome-claude-code-and-skills", "kind": "collection" },
+    { "repo": "azrod/skills", "kind": "collection" },
+    { "repo": "vercel-labs/agent-skills", "kind": "collection" },
+    { "repo": "obra/superpowers", "kind": "collection" },
+    { "repo": "mblode/agent-skills", "kind": "collection" },
+    { "repo": "trailofbits/skills", "kind": "collection" },
+    { "repo": "microsoft/skills", "kind": "collection" },
+    { "repo": "github/awesome-copilot", "kind": "collection" },
+    { "repo": "supabase/agent-skills", "kind": "collection" },
+    { "repo": "expo/skills", "kind": "collection" },
+    { "repo": "huggingface/skills", "kind": "collection" },
+    { "repo": "sickn33/antigravity-awesome-skills", "kind": "collection" },
+    { "repo": "ckreiling/mcp-server-docker", "kind": "collection" }
+  ],
+  "githubSearch": {
+    "topics": ["claude-skills", "claude-skill", "claude-code-skills", "agent-skills", "agentskills", "anthropic-skills", "claude-code-plugins"],
+    "codeQueries": ["filename:SKILL.md \"description:\" claude", "filename:SKILL.md path:skills"],
+    "maxReposPerQuery": 300
+  },
+  "crawl": {
+    "followAwesomeLinks": true,
+    "maxDiscoveredRepos": 800,
+    "aggregators": ["sickn33/antigravity-awesome-skills", "VoltAgent/awesome-agent-skills", "borghei/Claude-Skills", "OneWave-AI/claude-skills"],
+    "cloneTimeoutMs": 150000,
+    "concurrency": 6,
+    "ignoreOwners": ["user-attachments", "sponsors", "apps", "topics", "features", "marketplace", "orgs", "settings", "login", "about", "site", "pricing", "explore", "search", "collections", "trending", "readme", "security", "enterprise", "customer-stories", "github", "notifications", "new", "issues", "pulls", "contact", "blog", "events", "join", "mobile", "team", "solutions", "resources", "open-source", "copilot", "codespaces", "discussions", "sponsors"],
+    "ignoreRepos": ["anthropics/claude-code", "anthropics/anthropic-sdk-python", "anthropics/anthropic-sdk-typescript", "anthropics/courses", "modelcontextprotocol/servers", "VoltAgent/voltagent", "VoltAgent/awesome-claude-code-subagents", "VoltAgent/official-mcp-servers", "VoltAgent/awesome-mcp-servers"],
+    "ignoreOwnersForDiscovery": ["badges", "img.shields.io"]
+  },
+  "skipPathPatterns": ["node_modules/", "/.gemini/", "/.codex/", "/.cursor/", "/.windsurf/", "/.kiro/", "/.github/", "/test/", "/tests/", "/fixtures/", "/__tests__/", "/dist/", "/build/", "/vendor/", "/examples/outputs/"]
+}

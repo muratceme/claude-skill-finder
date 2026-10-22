@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Skill Finder</title>
+  <meta name="description" content="Search and browse thousands of Claude / Agent Skills (SKILL.md) collected from GitHub, organized by category, with install instructions for Claude Code, claude.ai and the API.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Claude Skill Finder">
+  <meta property="og:description" content="Searchable, categorized directory of Claude Skills from GitHub with install instructions.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d97757'/%3E%3Cpath d='M18 40 L32 16 L46 40 M24 32 L40 32' stroke='white' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#/" aria-label="Claude Skill Finder home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="28" height="28"><rect width="64" height="64" rx="14" fill="currentColor" opacity=".9"/><path d="M18 40 L32 16 L46 40 M24 32 L40 32" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-text">Claude <b>Skill Finder</b></span>
+      </a>
+      <form class="search" role="search" id="searchForm" autocomplete="off">
+        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" name="q" data-i18n-placeholder="searchPlaceholder" placeholder="Search skills… (e.g. pdf, react, seo, android)" aria-label="Search skills">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+      </form>
+      <nav class="nav" aria-label="Main">
+        <a href="#/browse" data-i18n="navBrowse">Browse</a>
+        <a href="#/install" data-i18n="navInstall">How to install</a>
+        <a href="#/repos" data-i18n="navRepos">Sources</a>
+        <a href="#/about" data-i18n="navAbout">About</a>
+        <button type="button" class="icon-btn" id="langBtn" title="Language / Dil">EN</button>
+        <button type="button" class="icon-btn" id="themeBtn" title="Theme" aria-label="Toggle theme">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap main" aria-live="polite">
+    <div class="loading" id="loading"><div class="spinner"></div><span data-i18n="loading">Loading skills…</span></div>
+  </main>
+
+  <footer class="footer wrap">
+    <div>
+      <span id="footerStats"></span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/muratceme/claude-skill-finder" target="_blank" rel="noopener">GitHub</a>
+      <a href="#/about" data-i18n="navAbout">About</a>
+      <a href="https://github.com/muratceme/claude-skill-finder/edit/main/scripts/sources.json" target="_blank" rel="noopener" data-i18n="addSource">Add a source</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="vendor/minisearch.js"></script>
+  <script src="vendor/marked.min.js"></script>
+  <script src="vendor/purify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

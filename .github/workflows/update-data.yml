@@ -1,0 +1,57 @@
+name: Update skills data
+
+on:
+  schedule:
+    - cron: '17 3 * * *'   # daily at 03:17 UTC
+  workflow_dispatch:
+    inputs:
+      max_repos:
+        description: 'Cap on repositories to scan (empty = no cap)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --omit=dev
+
+      - name: Collect skills from GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXTRA=""
+          if [ -n "${{ github.event.inputs.max_repos }}" ]; then EXTRA="--max-repos ${{ github.event.inputs.max_repos }}"; fi
+          node scripts/collect.mjs $EXTRA
+
+      - name: Sanity check output
+        run: node scripts/check.mjs
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site/data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          SKILLS=$(node -e "console.log(JSON.parse(require('fs').readFileSync('site/data/stats.json')).skills)")
+          REPOS=$(node -e "console.log(JSON.parse(require('fs').readFileSync('site/data/stats.json')).repos)")
+          git commit -m "data: refresh skills index ($SKILLS skills from $REPOS repos)"
+          git push

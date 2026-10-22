@@ -1,0 +1,18 @@
+{
+  "name": "claude-skill-finder",
+  "version": "1.0.0",
+  "description": "Searchable, categorized directory of Claude / Agent Skills collected from GitHub",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "collect": "node scripts/collect.mjs",
+    "collect:quick": "node scripts/collect.mjs --max-repos 15",
+    "serve": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "yaml": "^2.8.0"
+  },
+  "license": "MIT"
+}
