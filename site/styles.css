@@ -151,11 +151,11 @@ select, .select { padding: 7px 10px; border: 1px solid var(--line); border-radiu
 .card h3 { margin: 0; font-size: 15px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }
 .card p { margin: 0; color: var(--fg-muted); font-size: 13.5px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .card .foot { display: flex; align-items: center; gap: 8px; margin-top: auto; font-size: 12px; color: var(--fg-subtle); min-width: 0; }
-.card .repo { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1 1 auto; }
-.card .foot .right { margin-left: auto; display: flex; gap: 6px; flex-shrink: 0; }
+.card .repo { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 90px; flex: 1 1 auto; }
+.card .foot .right { margin-left: auto; display: flex; gap: 6px; flex-shrink: 1; min-width: 0; }
 .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--bg-soft); color: var(--fg-muted); white-space: nowrap; }
 .badge.official { background: var(--accent-soft); color: var(--accent-strong); }
-.badge.cat { background: var(--info-soft); color: var(--info); max-width: 170px; overflow: hidden; text-overflow: ellipsis; display: inline-block; line-height: 1.5; }
+.badge.cat { background: var(--info-soft); color: var(--info); max-width: 150px; min-width: 0; flex-shrink: 1; overflow: hidden; text-overflow: ellipsis; display: inline-block; line-height: 1.5; }
 .badge.stars { background: var(--warn-soft); color: #8a6100; }
 :root[data-theme="dark"] .badge.stars { color: #e4c072; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .badge.stars { color: #e4c072; } }
