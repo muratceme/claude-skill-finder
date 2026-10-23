@@ -278,12 +278,21 @@
       list = hits.map(h => { const s = byId.get(h.id); if (s) s._score = h.score; return s; }).filter(Boolean);
       terms = [...new Set(hits.flatMap(h => h.terms || []))];
     } else list = DATA.skills.slice();
-    if (cat) list = list.filter(s => s.category === cat);
-    if (cat && sub) list = list.filter(s => s.subcategory === sub || (s.category === cat && (s.alsoIn || []).includes(sub)));
     if (onlyOfficial) list = list.filter(s => s.official);
     if (withScripts) list = list.filter(s => s.hasScripts);
     if (repoFilter) list = list.filter(s => s.repo === repoFilter);
     if (win) list = list.filter(s => { const d = skillDate(s, dateBy); return d && (!win.from || d >= win.from) && (!win.to || d <= win.to); });
+    // counts in the sidebar reflect every active filter except the category itself
+    const pool = list;
+    const cnt = {};
+    for (const s of pool) {
+      cnt[s.category] = (cnt[s.category] || 0) + 1;
+      cnt[s.category + '/' + s.subcategory] = (cnt[s.category + '/' + s.subcategory] || 0) + 1;
+      for (const x of s.alsoIn || []) cnt[s.category + '/' + x] = (cnt[s.category + '/' + x] || 0) + 1;
+    }
+    const n = (id) => cnt[id] || 0;
+    if (cat) list = list.filter(s => s.category === cat);
+    if (cat && sub) list = list.filter(s => s.subcategory === sub || (s.alsoIn || []).includes(sub));
     const sorters = {
       relevance: (a, b) => rel(b) - rel(a) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name),
       stars: (a, b) => (b.official - a.official) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name),
@@ -298,7 +307,7 @@
     if (cat) crumbs.push(`<span>›</span>`, sub ? `<a href="#/c/${esc(cat)}">${esc(catById.get(cat).name)}</a>` : `<span>${esc(catById.get(cat).name)}</span>`);
     if (sub) crumbs.push(`<span>›</span>`, `<span>${esc(subName(cat, sub))}</span>`);
     const keep = { q, sort: params.get('sort'), official: onlyOfficial ? 1 : '', scripts: withScripts ? 1 : '', repo: repoFilter, days: params.get('days'), from: params.get('from'), to: params.get('to'), dateby: params.get('dateby') };
-    const subChips = cat ? catById.get(cat).subcategories.filter(x => x.count).map(x => `<a class="chip link ${sub === x.id ? 'active' : ''}" href="#/c/${esc(cat)}/${esc(x.id)}${qs(keep)}">${esc(x.name)} <span class="n">${x.count}</span></a>`).join('') : '';
+    const subChips = cat ? catById.get(cat).subcategories.filter(x => n(cat + '/' + x.id)).map(x => `<a class="chip link ${sub === x.id ? 'active' : ''}" href="#/c/${esc(cat)}/${esc(x.id)}${qs(keep)}">${esc(x.name)} <span class="n">${n(cat + '/' + x.id)}</span></a>`).join('') : '';
     const base = cat ? `c/${cat}${sub ? '/' + sub : ''}` : 'browse';
 
     main.innerHTML = `
@@ -307,18 +316,18 @@
           <div class="mobile-cats">
             <select id="mobileCat" aria-label="${esc(t('categories'))}">
               <option value="">${esc(t('allCats'))}</option>
-              ${DATA.categories.map(c => `<option value="${esc(c.id)}" ${c.id === cat ? 'selected' : ''}>${c.icon} ${esc(c.name)} (${c.count})</option>`).join('')}
+              ${DATA.categories.map(c => `<option value="${esc(c.id)}" ${c.id === cat ? 'selected' : ''}>${c.icon} ${esc(c.name)} (${n(c.id)})</option>`).join('')}
             </select>
-            ${cat ? `<select id="mobileSub" aria-label="${esc(t('subs'))}" style="margin-top:8px"><option value="">${esc(t('allSubs'))}</option>${catById.get(cat).subcategories.filter(x => x.count).map(x => `<option value="${esc(x.id)}" ${x.id === sub ? 'selected' : ''}>${esc(x.name)} (${x.count})</option>`).join('')}</select>` : ''}
+            ${cat ? `<select id="mobileSub" aria-label="${esc(t('subs'))}" style="margin-top:8px"><option value="">${esc(t('allSubs'))}</option>${catById.get(cat).subcategories.filter(x => n(cat + '/' + x.id) || x.id === sub).map(x => `<option value="${esc(x.id)}" ${x.id === sub ? 'selected' : ''}>${esc(x.name)} (${n(cat + '/' + x.id)})</option>`).join('')}</select>` : ''}
           </div>
           <h4>${esc(t('categories'))}</h4>
           <ul class="tree">
-            <li><a class="tree-cat ${!cat ? 'active' : ''}" href="#/browse${qs(keep)}" style="display:flex">${esc(t('allSkills'))}<span class="count">${DATA.stats.skills.toLocaleString()}</span></a></li>
+            <li><a class="tree-cat ${!cat ? 'active' : ''}" href="#/browse${qs(keep)}" style="display:flex">${esc(t('allSkills'))}<span class="count">${pool.length.toLocaleString()}</span></a></li>
             ${DATA.categories.map(c => `
               <li>
-                <button type="button" class="tree-cat ${c.id === cat ? 'active' : ''} ${c.id === cat ? 'open' : ''}" data-cat="${esc(c.id)}"><span class="caret">▶</span><span>${c.icon} ${esc(c.name)}</span><span class="count">${c.count}</span></button>
+                <button type="button" class="tree-cat ${c.id === cat ? 'active' : ''} ${c.id === cat ? 'open' : ''} ${n(c.id) ? '' : 'dim'}" data-cat="${esc(c.id)}"><span class="caret">▶</span><span>${c.icon} ${esc(c.name)}</span><span class="count">${n(c.id).toLocaleString()}</span></button>
                 <ul class="tree-subs ${c.id === cat ? 'open' : ''}">
-                  ${c.subcategories.filter(x => x.count).map(x => `<li><a class="${c.id === cat && x.id === sub ? 'active' : ''}" href="#/c/${esc(c.id)}/${esc(x.id)}${qs(keep)}">${esc(x.name)}<span class="count">${x.count}</span></a></li>`).join('')}
+                  ${c.subcategories.filter(x => n(c.id + '/' + x.id) || (c.id === cat && x.id === sub)).map(x => `<li><a class="${c.id === cat && x.id === sub ? 'active' : ''}" href="#/c/${esc(c.id)}/${esc(x.id)}${qs(keep)}">${esc(x.name)}<span class="count">${n(c.id + '/' + x.id)}</span></a></li>`).join('')}
                 </ul>
               </li>`).join('')}
           </ul>

@@ -115,6 +115,7 @@ a.chip:hover, .chip.link:hover { border-color: var(--fg-subtle); color: var(--fg
 .tree > li { margin-bottom: 2px; }
 .tree-cat { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 8px; border: 0; background: none; border-radius: 8px; cursor: pointer; color: var(--fg); font-size: 14px; }
 .tree-cat:hover { background: var(--bg-soft); }
+.tree-cat.dim { opacity: .45; }
 .tree-cat.active { background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
 .tree-cat .count { margin-left: auto; color: var(--fg-subtle); font-size: 12px; font-variant-numeric: tabular-nums; font-weight: 400; }
 .tree-cat .caret { width: 10px; color: var(--fg-subtle); font-size: 10px; transition: transform .15s; }
