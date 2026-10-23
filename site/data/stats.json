@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T20:56:24.155Z",
+  "generatedAt": "2026-10-23T07:33:37.016Z",
   "skills": 21577,
   "repos": 709,
   "reposScanned": 823,
   "reposFailed": 29,
   "official": 55,
   "duplicatesMerged": 10122,
-  "durationSec": 202,
+  "durationSec": 366,
   "apiUsed": false,
   "errors": [
     {

@@ -404,6 +404,28 @@ async function main() {
   });
   skills.sort((a, b) => (b.official - a.official) || ((b.stars || 0) - (a.stars || 0)) || a.name.localeCompare(b.name));
 
+  // 4b. first-seen dates: persisted across runs so the site can filter "added in the last N days".
+  //     On the very first run there is no history, so the repo's last-commit date is used as an approximation.
+  const seenFile = path.join(path.dirname(OUT), 'first-seen.json');
+  let seen = {};
+  try { seen = JSON.parse(fs.readFileSync(seenFile, 'utf8')); } catch {}
+  const firstRun = !Object.keys(seen).length;
+  const today = new Date().toISOString().slice(0, 10);
+  for (const s of skills) {
+    if (!seen[s.id]) {
+      const r = repos.get(s.repo.toLowerCase());
+      const res = results.get(s.repo.toLowerCase());
+      const approx = (r?.info?.pushedAt || res?.head?.date || '').slice(0, 10);
+      seen[s.id] = firstRun && approx ? approx : today;
+    }
+    s.added = seen[s.id];
+  }
+  // forget ids that vanished more than ~a year ago to keep the file bounded
+  const live = new Set(skills.map(s => s.id));
+  const cutoff = new Date(Date.now() - 400 * 86400000).toISOString().slice(0, 10);
+  for (const [id, d] of Object.entries(seen)) if (!live.has(id) && d < cutoff) delete seen[id];
+  fs.writeFileSync(seenFile, JSON.stringify(seen));
+
   // 5. output
   const repoOut = {};
   for (const r of repos.values()) {
@@ -414,7 +436,7 @@ async function main() {
     repoOut[r.fullName] = {
       owner: r.owner, name: r.name, url: `https://github.com/${r.fullName}`, kind: r.kind, official: !!r.official,
       skills: count, stars: r.info?.stars ?? null, description: clip(r.info?.description || '', 240) || undefined,
-      license: r.info?.license || undefined, pushedAt: r.info?.pushedAt || res.head?.date || undefined,
+      license: r.info?.license || undefined, pushedAt: (r.info?.pushedAt || res.head?.date || '').slice(0, 10) || undefined,
       branch: res.head?.branch || r.info?.defaultBranch || 'main', topics: r.info?.topics?.slice(0, 10) || undefined,
       foundVia: [...r.foundVia].slice(0, 5),
       marketplace: r.facts?.marketplace ? { name: r.facts.marketplace.name, plugins: r.facts.marketplace.plugins.length } : undefined,
@@ -431,11 +453,11 @@ async function main() {
   const errors = [...repos.values()].map(r => [r.fullName, results.get(r.fullName.toLowerCase())?.error]).filter(([, e]) => e).map(([fullName, error]) => ({ repo: fullName, error }));
   // Compact row format keeps the index JSON small enough for the browser (URLs are derived client-side from
   // repo+path+branch). Full details (long description, copies, tools, ...) live in per-repo shards under data/repos/.
-  const cols = ['id', 'name', 'description', 'repo', 'path', 'category', 'subcategory', 'alsoIn', 'official', 'license', 'version', 'stars', 'flags', 'plugin', 'marketplacePlugin', 'copies', 'file'];
+  const cols = ['id', 'name', 'description', 'repo', 'path', 'category', 'subcategory', 'alsoIn', 'official', 'license', 'version', 'stars', 'flags', 'plugin', 'marketplacePlugin', 'copies', 'file', 'added'];
   const rows = skills.map(s => {
     const flags = (s.hasScripts ? 1 : 0) | (s.hasReferences ? 2 : 0) | (s.hasAssets ? 4 : 0);
     const stdFile = (s.path ? s.path + '/' : '') + 'SKILL.md';
-    return [s.id, s.name, clip(s.description, 200), s.repo, s.path, s.category, s.subcategory, s.alsoIn.length ? s.alsoIn : 0, s.official ? 1 : 0, s.license || 0, s.version || 0, s.stars ?? 0, flags, s.plugin || 0, s.marketplacePlugin || 0, s.copies.length, s.file === stdFile ? 0 : s.file];
+    return [s.id, s.name, clip(s.description, 200), s.repo, s.path, s.category, s.subcategory, s.alsoIn.length ? s.alsoIn : 0, s.official ? 1 : 0, s.license || 0, s.version || 0, s.stars ?? 0, flags, s.plugin || 0, s.marketplacePlugin || 0, s.copies.length, s.file === stdFile ? 0 : s.file, s.added];
   });
   const shardDir = path.join(path.dirname(OUT), 'repos');
   fs.rmSync(shardDir, { recursive: true, force: true });

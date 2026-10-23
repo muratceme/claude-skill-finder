@@ -21,6 +21,7 @@
       verifyTitle: 'Verify', verifyDesc: 'Start a new Claude Code session and type /skills (or ask "what skills do you have?"). The skill should be listed with its description.',
       installPageTitle: 'How to install Claude Skills', installPageSub: 'Everything on this page applies to any skill in the directory. Each skill page also shows ready-to-copy commands with the real repo and folder names.',
       aboutTitle: 'About this directory', reposTitle: 'Source repositories', reposSub: 'Where the skills come from. Repositories are discovered from a seed list, awesome-lists and GitHub search, then cloned and scanned for SKILL.md files.',
+      dateFilter: 'Date', dateAny: 'Any time', dateDays: 'Last {n} days', dateCustom: 'Custom range…', dateLastN: 'Last', days: 'days', dateFrom: 'From', dateTo: 'To', dateBy: 'Date source', dateByRepo: 'Repo last commit', dateByAdded: 'Added to directory', sortAdded: 'Recently added', added: 'Added', repoUpdated: 'Repo updated', newThisWeek: 'Updated in the last 7 days', dateHint: '"Added" is the day the skill first appeared in this directory; before tracking started it falls back to the repo commit date.',
       repo: 'Repository', skillsCount: 'Skills', kind: 'Type', updated: 'Updated', seed: 'seed', awesome: 'awesome list', collection: 'collection', discovered: 'discovered', lang: 'Türkçe', notFound: 'Skill not found.', backHome: 'Back to home', sub: 'subcategory', subs: 'subcategories', tipSearch: 'Tip: press / to focus search. Try queries like', whatIsSkill: 'What is a Skill?', whatIsSkillText: 'A Skill is a folder with a SKILL.md file (YAML frontmatter with name and description, plus markdown instructions) and optional scripts, references and assets. Claude loads the description into context and reads the full instructions only when the task matches — so you can install many skills without bloating the prompt.',
     },
     tr: {
@@ -40,6 +41,7 @@
       verifyTitle: 'Doğrula', verifyDesc: 'Yeni bir Claude Code oturumu açıp /skills yazın (veya "hangi skillerin var?" diye sorun). Skill açıklamasıyla listelenmeli.',
       installPageTitle: 'Claude Skill nasıl kurulur?', installPageSub: 'Bu sayfadaki her şey dizindeki tüm skiller için geçerli. Her skill sayfasında ayrıca gerçek repo ve klasör adlarıyla kopyalanmaya hazır komutlar var.',
       aboutTitle: 'Bu dizin hakkında', reposTitle: 'Kaynak repolar', reposSub: 'Skillerin geldiği yerler. Repolar bir tohum listesi, awesome listeleri ve GitHub aramasıyla bulunur; sonra klonlanıp SKILL.md dosyaları taranır.',
+      dateFilter: 'Tarih', dateAny: 'Tüm zamanlar', dateDays: 'Son {n} gün', dateCustom: 'Özel aralık…', dateLastN: 'Son', days: 'gün', dateFrom: 'Başlangıç', dateTo: 'Bitiş', dateBy: 'Tarih kaynağı', dateByRepo: 'Reponun son commit\'i', dateByAdded: 'Dizine eklenme', sortAdded: 'Yeni eklenen', added: 'Eklendi', repoUpdated: 'Repo güncellendi', newThisWeek: 'Son 7 günde güncellenenler', dateHint: '"Eklendi" skill\'in bu dizinde ilk görüldüğü gün; takip başlamadan önceki skiller için reponun commit tarihi kullanılır.',
       repo: 'Repo', skillsCount: 'Skill', kind: 'Tür', updated: 'Güncelleme', seed: 'tohum', awesome: 'awesome liste', collection: 'koleksiyon', discovered: 'keşfedilen', lang: 'English', notFound: 'Skill bulunamadı.', backHome: 'Ana sayfaya dön', sub: 'alt kategori', subs: 'alt kategori', tipSearch: 'İpucu: aramaya odaklanmak için / tuşuna basın. Örnek aramalar:', whatIsSkill: 'Skill nedir?', whatIsSkillText: 'Skill; bir SKILL.md dosyası (name ve description içeren YAML frontmatter + markdown talimatlar) ve isteğe bağlı script, referans ve asset dosyalarından oluşan bir klasördür. Claude yalnızca açıklamayı bağlama alır, görev eşleşince tüm talimatları okur — böylece çok sayıda skill kurmak prompt\'u şişirmez.',
     },
   };
@@ -74,6 +76,17 @@
       out = out.replace(re, '<mark>$1</mark>');
     }
     return out;
+  }
+  const DAY = 86400000;
+  const isoDay = (d) => new Date(d).toISOString().slice(0, 10);
+  function skillDate(s, by) { return by === 'added' ? (s.added || '') : ((DATA.repos[s.repo] || {}).pushedAt || ''); }
+  /** Build a {from,to} window (ISO dates) from URL params: days=N or from=YYYY-MM-DD&to=YYYY-MM-DD */
+  function dateWindow(params) {
+    const days = Number(params.get('days') || 0);
+    const from = params.get('from') || '', to = params.get('to') || '';
+    if (days > 0) return { from: isoDay(Date.now() - days * DAY), to: '', days };
+    if (from || to) return { from, to, days: 0 };
+    return null;
   }
   function catName(catId) { const c = catById.get(catId); return c ? `${c.icon} ${c.name}` : catId; }
   function subName(catId, subId) { const c = catById.get(catId); const s = c && c.subMap.get(subId); return s ? s.name : subId; }
@@ -217,7 +230,9 @@
           <span class="stat">${esc(t('statUpdated'))} <b>${esc(fmtDate(DATA.generatedAt))}</b></span>
         </div>
         <p class="note" style="margin-top:12px">${esc(t('tipSearch'))} ${examples.map(e => `<a class="chip link" href="#/browse?q=${encodeURIComponent(e)}">${esc(e)}</a>`).join(' ')}</p>
+        <p class="note" style="margin-top:6px">📅 ${[7, 30, 90].map(n => `<a class="chip link" href="#/browse?days=${n}">${esc(t('dateDays').replace('{n}', n))}</a>`).join(' ')} <a class="chip link" href="#/browse?days=30&dateby=added">${esc(t('dateByAdded'))} · 30</a></p>
       </section>
+      ${(() => { const since = isoDay(Date.now() - 7 * DAY); const fresh = DATA.skills.filter(x => (DATA.repos[x.repo]?.pushedAt || '') >= since).sort((a, b) => (b.official - a.official) || (b.stars || 0) - (a.stars || 0)).slice(0, 8); return fresh.length ? `<div class="section-title"><h2>${esc(t('newThisWeek'))}</h2><a href="#/browse?days=7">${esc(t('viewAll'))}</a></div><div class="grid">${fresh.map(card).join('')}</div>` : ''; })()}
       <div class="section-title"><h2>${esc(t('categories'))}</h2><a href="#/browse">${esc(t('browseAll'))}</a></div>
       <div class="cat-grid">
         ${DATA.categories.map(c => `
@@ -241,16 +256,18 @@
     return `<a class="card" href="#/skill/${encodeURIComponent(s.id)}">
       <div class="title"><h3>${highlight(s.name, terms)}</h3>${s.official ? `<span class="badge official">${esc(t('official'))}</span>` : ''}</div>
       <p>${highlight(s.description || '', terms)}</p>
-      <div class="foot"><span class="repo" title="${esc(s.repo)}">${esc(s.repo)}</span><span class="right">${s.stars != null ? `<span class="badge stars">★ ${fmtNum(s.stars)}</span>` : ''}<span class="badge cat" title="${esc(catName(s.category))}">${esc(subName(s.category, s.subcategory))}</span></span></div>
+      <div class="foot"><span class="repo" title="${esc(s.repo)}">${esc(s.repo)}</span>${r.pushedAt ? `<span class="date" title="${esc(t('repoUpdated'))}">${esc(fmtDate(r.pushedAt))}</span>` : ''}<span class="right">${s.stars != null ? `<span class="badge stars">★ ${fmtNum(s.stars)}</span>` : ''}<span class="badge cat" title="${esc(catName(s.category))}">${esc(subName(s.category, s.subcategory))}</span></span></div>
     </a>`;
   }
 
   function renderBrowse({ cat, sub, q = '', params }) {
     params = params || new URLSearchParams();
-    const sort = params.get('sort') || (q ? 'relevance' : 'stars');
+    const sort = params.get('sort') || (q ? 'relevance' : (dateWindow(params) ? (params.get('dateby') === 'added' ? 'added' : 'updated') : 'stars'));
     const onlyOfficial = params.get('official') === '1';
     const withScripts = params.get('scripts') === '1';
     const repoFilter = params.get('repo') || '';
+    const dateBy = params.get('dateby') === 'added' ? 'added' : 'repo';
+    const win = dateWindow(params);
     if (cat && !catById.has(cat)) cat = undefined;
     if (cat && sub && !catById.get(cat).subMap.has(sub)) sub = undefined;
 
@@ -266,11 +283,13 @@
     if (onlyOfficial) list = list.filter(s => s.official);
     if (withScripts) list = list.filter(s => s.hasScripts);
     if (repoFilter) list = list.filter(s => s.repo === repoFilter);
+    if (win) list = list.filter(s => { const d = skillDate(s, dateBy); return d && (!win.from || d >= win.from) && (!win.to || d <= win.to); });
     const sorters = {
       relevance: (a, b) => rel(b) - rel(a) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name),
       stars: (a, b) => (b.official - a.official) || (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name),
       name: (a, b) => a.name.localeCompare(b.name),
-      updated: (a, b) => String(DATA.repos[b.repo]?.pushedAt || '').localeCompare(String(DATA.repos[a.repo]?.pushedAt || '')),
+      updated: (a, b) => String(DATA.repos[b.repo]?.pushedAt || '').localeCompare(String(DATA.repos[a.repo]?.pushedAt || '')) || (b.stars || 0) - (a.stars || 0),
+      added: (a, b) => String(b.added || '').localeCompare(String(a.added || '')) || (b.stars || 0) - (a.stars || 0),
     };
     list.sort(sorters[sort] || sorters.stars);
 
@@ -278,7 +297,8 @@
     const crumbs = [`<a href="#/">Home</a>`, `<span>›</span>`, `<a href="#/browse">${esc(t('navBrowse'))}</a>`];
     if (cat) crumbs.push(`<span>›</span>`, sub ? `<a href="#/c/${esc(cat)}">${esc(catById.get(cat).name)}</a>` : `<span>${esc(catById.get(cat).name)}</span>`);
     if (sub) crumbs.push(`<span>›</span>`, `<span>${esc(subName(cat, sub))}</span>`);
-    const subChips = cat ? catById.get(cat).subcategories.filter(x => x.count).map(x => `<a class="chip link ${sub === x.id ? 'active' : ''}" href="#/c/${esc(cat)}/${esc(x.id)}${qs({ q, sort: params.get('sort'), official: onlyOfficial ? 1 : '', scripts: withScripts ? 1 : '', repo: repoFilter })}">${esc(x.name)} <span class="n">${x.count}</span></a>`).join('') : '';
+    const keep = { q, sort: params.get('sort'), official: onlyOfficial ? 1 : '', scripts: withScripts ? 1 : '', repo: repoFilter, days: params.get('days'), from: params.get('from'), to: params.get('to'), dateby: params.get('dateby') };
+    const subChips = cat ? catById.get(cat).subcategories.filter(x => x.count).map(x => `<a class="chip link ${sub === x.id ? 'active' : ''}" href="#/c/${esc(cat)}/${esc(x.id)}${qs(keep)}">${esc(x.name)} <span class="n">${x.count}</span></a>`).join('') : '';
     const base = cat ? `c/${cat}${sub ? '/' + sub : ''}` : 'browse';
 
     main.innerHTML = `
@@ -293,12 +313,12 @@
           </div>
           <h4>${esc(t('categories'))}</h4>
           <ul class="tree">
-            <li><a class="tree-cat ${!cat ? 'active' : ''}" href="#/browse${qs({ q })}" style="display:flex">${esc(t('allSkills'))}<span class="count">${DATA.stats.skills.toLocaleString()}</span></a></li>
+            <li><a class="tree-cat ${!cat ? 'active' : ''}" href="#/browse${qs(keep)}" style="display:flex">${esc(t('allSkills'))}<span class="count">${DATA.stats.skills.toLocaleString()}</span></a></li>
             ${DATA.categories.map(c => `
               <li>
                 <button type="button" class="tree-cat ${c.id === cat ? 'active' : ''} ${c.id === cat ? 'open' : ''}" data-cat="${esc(c.id)}"><span class="caret">▶</span><span>${c.icon} ${esc(c.name)}</span><span class="count">${c.count}</span></button>
                 <ul class="tree-subs ${c.id === cat ? 'open' : ''}">
-                  ${c.subcategories.filter(x => x.count).map(x => `<li><a class="${c.id === cat && x.id === sub ? 'active' : ''}" href="#/c/${esc(c.id)}/${esc(x.id)}${qs({ q })}">${esc(x.name)}<span class="count">${x.count}</span></a></li>`).join('')}
+                  ${c.subcategories.filter(x => x.count).map(x => `<li><a class="${c.id === cat && x.id === sub ? 'active' : ''}" href="#/c/${esc(c.id)}/${esc(x.id)}${qs(keep)}">${esc(x.name)}<span class="count">${x.count}</span></a></li>`).join('')}
                 </ul>
               </li>`).join('')}
           </ul>
@@ -306,7 +326,26 @@
             <h4>${esc(t('filters'))}</h4>
             <label><input type="checkbox" id="fOfficial" ${onlyOfficial ? 'checked' : ''}> ${esc(t('onlyOfficial'))}</label>
             <label><input type="checkbox" id="fScripts" ${withScripts ? 'checked' : ''}> ${esc(t('withScripts'))}</label>
-            ${repoFilter ? `<span class="chip active">${esc(repoFilter)} <a href="#/${base}${qs({ q, sort })}" title="${esc(t('clear'))}">✕</a></span>` : ''}
+            ${repoFilter ? `<span class="chip active">${esc(repoFilter)} <a href="#/${base}${qs({ ...keep, repo: '' })}" title="${esc(t('clear'))}">✕</a></span>` : ''}
+            <h4 style="margin-top:10px">${esc(t('dateFilter'))}</h4>
+            <select id="fDate" aria-label="${esc(t('dateFilter'))}">
+              <option value="">${esc(t('dateAny'))}</option>
+              ${[7, 14, 30, 90, 180, 365].map(n => `<option value="${n}" ${win && win.days === n ? 'selected' : ''}>${esc(t('dateDays').replace('{n}', n))}</option>`).join('')}
+              <option value="n" ${win && win.days && ![7, 14, 30, 90, 180, 365].includes(win.days) ? 'selected' : ''}>${esc(t('dateLastN'))} N ${esc(t('days'))}…</option>
+              <option value="custom" ${win && !win.days ? 'selected' : ''}>${esc(t('dateCustom'))}</option>
+            </select>
+            <div id="fDateN" class="date-row" ${win && win.days && ![7, 14, 30, 90, 180, 365].includes(win.days) ? '' : 'hidden'}>
+              <label>${esc(t('dateLastN'))} <input type="number" id="fDays" min="1" max="3650" value="${win && win.days ? win.days : 10}" style="width:70px"> ${esc(t('days'))}</label>
+              <button type="button" class="btn sm" id="fDaysGo">OK</button>
+            </div>
+            <div id="fDateRange" class="date-row" ${win && !win.days ? '' : 'hidden'}>
+              <label>${esc(t('dateFrom'))} <input type="date" id="fFrom" value="${esc(win?.from || '')}"></label>
+              <label>${esc(t('dateTo'))} <input type="date" id="fTo" value="${esc(win?.to || '')}"></label>
+              <button type="button" class="btn sm" id="fRangeGo">OK</button>
+            </div>
+            <label class="radio"><input type="radio" name="dateby" value="repo" ${dateBy === 'repo' ? 'checked' : ''}> ${esc(t('dateByRepo'))}</label>
+            <label class="radio"><input type="radio" name="dateby" value="added" ${dateBy === 'added' ? 'checked' : ''}> ${esc(t('dateByAdded'))}</label>
+            <small class="note" title="${esc(t('dateHint'))}">ⓘ ${esc(t('dateHint'))}</small>
           </div>
         </aside>
         <section>
@@ -314,12 +353,19 @@
           <div class="results-head">
             <h2>${esc(title)}</h2>
             <span class="meta">${list.length.toLocaleString()} ${esc(list.length === 1 ? t('result') : t('results'))}${q && cat ? ` · “${esc(q)}” ${esc(t('searchIn'))} ${esc(catById.get(cat).name)}` : ''}</span>
+            ${win ? `<a class="chip active" href="#/${base}${qs({ ...keep, days: '', from: '', to: '' })}" title="${esc(t('clear'))}">📅 ${win.days ? esc(t('dateDays').replace('{n}', win.days)) : esc((win.from || '…') + ' → ' + (win.to || '…'))} · ${esc(dateBy === 'added' ? t('dateByAdded') : t('dateByRepo'))} ✕</a>` : ''}
             <div class="tools">
+              <select id="quickDate" aria-label="${esc(t('dateFilter'))}" title="${esc(t('dateFilter'))}">
+                <option value="">📅 ${esc(t('dateAny'))}</option>
+                ${[7, 14, 30, 90, 365].map(n => `<option value="${n}" ${win && win.days === n ? 'selected' : ''}>📅 ${esc(t('dateDays').replace('{n}', n))}</option>`).join('')}
+                <option value="more" ${win && (!win.days || ![7, 14, 30, 90, 365].includes(win.days)) ? 'selected' : ''}>📅 ${esc(t('dateCustom'))}</option>
+              </select>
               <select id="sort" aria-label="Sort">
                 ${q ? `<option value="relevance" ${sort === 'relevance' ? 'selected' : ''}>${esc(t('sortRelevance'))}</option>` : ''}
                 <option value="stars" ${sort === 'stars' ? 'selected' : ''}>${esc(t('sortStars'))}</option>
                 <option value="name" ${sort === 'name' ? 'selected' : ''}>${esc(t('sortName'))}</option>
                 <option value="updated" ${sort === 'updated' ? 'selected' : ''}>${esc(t('sortUpdated'))}</option>
+                <option value="added" ${sort === 'added' ? 'selected' : ''}>${esc(t('sortAdded'))}</option>
               </select>
             </div>
           </div>
@@ -337,7 +383,23 @@
       shown += PAGE;
       if (shown >= list.length) $('#more').remove(); else $('#more').textContent = `${t('loadMore')} (${(list.length - shown).toLocaleString()})`;
     });
-    const current = () => ({ q, sort: $('#sort').value, official: $('#fOfficial').checked ? 1 : '', scripts: $('#fScripts').checked ? 1 : '', repo: repoFilter });
+    const current = () => ({ q, sort: $('#sort').value, official: $('#fOfficial').checked ? 1 : '', scripts: $('#fScripts').checked ? 1 : '', repo: repoFilter, days: params.get('days'), from: params.get('from'), to: params.get('to'), dateby: main.querySelector('input[name=dateby]:checked')?.value === 'added' ? 'added' : '' });
+    const withDate = (extra) => ({ ...current(), sort: '', days: '', from: '', to: '', ...extra });
+    $('#fDate').addEventListener('change', (e) => {
+      const v = e.target.value;
+      $('#fDateN').hidden = v !== 'n'; $('#fDateRange').hidden = v !== 'custom';
+      if (v === '') go(base, withDate({}));
+      else if (v !== 'n' && v !== 'custom') go(base, withDate({ days: v }));
+    });
+    $('#quickDate').addEventListener('change', (e) => {
+      const v = e.target.value;
+      if (v === 'more') { $('#fDate').value = win && !win.days ? 'custom' : 'n'; $('#fDate').dispatchEvent(new Event('change')); $('#fDate').scrollIntoView({ block: 'center' }); ($('#fDateN').hidden ? $('#fFrom') : $('#fDays')).focus(); return; }
+      $('#fDate').value = v; $('#fDate').dispatchEvent(new Event('change'));
+    });
+    $('#fDaysGo').addEventListener('click', () => { const n = Math.max(1, Number($('#fDays').value || 0)); if (n) go(base, withDate({ days: n })); });
+    $('#fDays').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('#fDaysGo').click(); });
+    $('#fRangeGo').addEventListener('click', () => { const from = $('#fFrom').value, to = $('#fTo').value; if (from || to) go(base, withDate({ from, to })); });
+    main.querySelectorAll('input[name=dateby]').forEach(r => r.addEventListener('change', () => go(base, { ...current(), sort: params.get('sort') && ['updated', 'added'].includes(params.get('sort')) ? '' : params.get('sort') })));
     $('#sort').addEventListener('change', () => go(base, current()));
     $('#fOfficial').addEventListener('change', () => go(base, current()));
     $('#fScripts').addEventListener('change', () => go(base, current()));
@@ -452,7 +514,8 @@
               ${s.tools ? `<dt>${esc(t('tools'))}</dt><dd><code>${esc(s.tools)}</code></dd>` : ''}
               ${s.requires ? `<dt>${esc(t('requires'))}</dt><dd><code>${esc(s.requires)}</code></dd>` : ''}
               <dt>${esc(t('contents'))}</dt><dd>SKILL.md${s.size ? ` (${fmtNum(s.size)} B)` : ''}${s.hasScripts ? ` · ${esc(t('scripts'))}` : ''}${s.hasReferences ? ` · ${esc(t('references'))}` : ''}${s.hasAssets ? ` · ${esc(t('assets'))}` : ''}</dd>
-              ${r.pushedAt ? `<dt>${esc(t('updated'))}</dt><dd>${esc(fmtDate(r.pushedAt))}</dd>` : ''}
+              ${r.pushedAt ? `<dt>${esc(t('repoUpdated'))}</dt><dd>${esc(fmtDate(r.pushedAt))}</dd>` : ''}
+              ${s.added ? `<dt>${esc(t('added'))}</dt><dd title="${esc(t('dateHint'))}">${esc(fmtDate(s.added))}</dd>` : ''}
               <dt>${esc(t('rawFile'))}</dt><dd><a href="${esc(s.rawUrl)}" target="_blank" rel="noopener">raw.githubusercontent.com ↗</a></dd>
             </dl>
           </div>
