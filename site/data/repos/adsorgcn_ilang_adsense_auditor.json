@@ -1,0 +1,1 @@
+{"repo":"adsorgcn/iLang-Adsense-Auditor","skills":{"adsorgcn-ilang-adsense-auditor-root":{"description":"用 I-Lang v5.0 判断层审核一个网站是否具备申请 Google AdSense 的条件。每条要求输出一个结构化判断向量,站点结论遵循屏障规则(一个阻断项即一票否决),完整性由代码强制,保证没有任何一条要求被跳过。当用户想知道网站能否申请 AdSense、能否通过审核、能否投放广告,或需要诊断 AdSense 被拒、\"网站尚未准备好\"、\"内容价值偏低\"等问题时,使用本 skill。","size":4179,"copies":[]}}}

@@ -1,0 +1,1 @@
+{"repo":"ai-freer/fortune-skill","skills":{"ai-freer-fortune-skill-root":{"description":"中国传统命理分析（八字+紫微斗数）。通过对话收集出生信息，调用排盘脚本获取精确数据， 结合经典典籍进行专业分析。 Triggers: \"算命\", \"算八字\", \"看八字\", \"批八字\", \"排盘\", \"紫微\", \"紫微斗数\", \"帮我看看命\", \"我的运势\", \"今年运势\", \"合婚\", \"bazi\", \"ziwei\", \"fortune\"","size":19571,"copies":[]}}}

@@ -1,0 +1,1 @@
+{"repo":"qingshanliuci/cnki-aigc---skill","skills":{"qingshanliuci-cnki-aigc-skill-root":{"description":"改写中文学术论文中被知网AIGC检测器标为\"红色显著\"的段落，目标是将AI率落出红色区间且不改变事实/数字/术语/引用。基于实战将20.6%降至10.1%（净降10.5个百分点）的工作流提炼。使用场景：用户提到\"知网AIGC\"\"降AI率\"\"红色显著\"\"降重\"或贴出AIGC检测报告片段时触发。","size":3354,"copies":[]}}}

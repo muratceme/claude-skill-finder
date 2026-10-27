@@ -1,14 +1,22 @@
 {
-  "generatedAt": "2026-10-23T07:33:37.016Z",
-  "skills": 21577,
-  "repos": 709,
-  "reposScanned": 823,
-  "reposFailed": 29,
+  "generatedAt": "2026-10-27T09:06:31.186Z",
+  "skills": 47763,
+  "repos": 1612,
+  "reposScanned": 1915,
+  "reposFailed": 33,
   "official": 55,
-  "duplicatesMerged": 10122,
-  "durationSec": 366,
-  "apiUsed": false,
+  "duplicatesMerged": 28731,
+  "durationSec": 700,
+  "apiUsed": true,
   "errors": [
+    {
+      "repo": "sickn33/agentic-awesome-skills",
+      "error": "duplicate of sickn33/antigravity-awesome-skills (same HEAD)"
+    },
+    {
+      "repo": "HIDORAKAI002/ai-workspace-archive",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/HIDORAKAI002/ai-workspace-archive.git /home/runner/wor"
+    },
     {
       "repo": "K-Dense-AI/claude-scientific-skills",
       "error": "duplicate of K-Dense-AI/scientific-agent-skills (same HEAD)"
@@ -19,7 +27,7 @@
     },
     {
       "repo": "raintree-technology/claude-starter",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/raintree-technology/claude-starter.git /home/runner/wo"
     },
     {
       "repo": "huifer/Claude-Ally-Health",
@@ -27,7 +35,11 @@
     },
     {
       "repo": "openclaw/skills",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/openclaw/skills.git /home/runner/work/claude-skill-fin"
+    },
+    {
+      "repo": "santifer/career-ops",
+      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
     },
     {
       "repo": "nowork-studio/toprank",
@@ -35,67 +47,59 @@
     },
     {
       "repo": "HEOJUNFO/ai-film-crew",
-      "error": "not in cache (--no-fetch)"
-    },
-    {
-      "repo": "sickn33/agentic-awesome-skills",
-      "error": "duplicate of sickn33/antigravity-awesome-skills (same HEAD)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/HEOJUNFO/ai-film-crew.git /home/runner/work/claude-ski"
     },
     {
       "repo": "mturac/recsys-pipeline-architect",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/mturac/recsys-pipeline-architect.git /home/runner/work"
     },
     {
       "repo": "example-org/sdk",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/example-org/sdk.git /home/runner/work/claude-skill-fin"
     },
     {
       "repo": "anthropics/anthropic-cookbook",
       "error": "duplicate of anthropics/claude-cookbooks (same HEAD)"
     },
     {
+      "repo": "bablobanov/hermes-telegram-checklist",
+      "error": "duplicate of bablobanov/hermes-agent-telegram-checklist (same HEAD)"
+    },
+    {
       "repo": "half144/cutaway",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/half144/cutaway.git /home/runner/work/claude-skill-fin"
     },
     {
       "repo": "HoraceLuBFA/en-zh-translation-polish",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/HoraceLuBFA/en-zh-translation-polish.git /home/runner/"
     },
     {
       "repo": "uriva/find-scene-skill",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/uriva/find-scene-skill.git /home/runner/work/claude-sk"
     },
     {
       "repo": "fractalmind-ai/agent-manager-skill",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/fractalmind-ai/agent-manager-skill.git /home/runner/wo"
     },
     {
       "repo": "wd041216-bit/ironclaw-agent-guard",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/wd041216-bit/ironclaw-agent-guard.git /home/runner/wor"
     },
     {
       "repo": "glitternetwork/skills",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/glitternetwork/skills.git /home/runner/work/claude-ski"
     },
     {
       "repo": "username/pdf-analyzer",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/username/pdf-analyzer.git /home/runner/work/claude-ski"
     },
     {
       "repo": "owner/repo",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/owner/repo.git /home/runner/work/claude-skill-finder/c"
     },
     {
       "repo": "NovaCode37/claude-security-skills",
-      "error": "not in cache (--no-fetch)"
-    },
-    {
-      "repo": "livetennisapi/polymarket-tennis",
-      "error": "not in cache (--no-fetch)"
-    },
-    {
-      "repo": "livetennisapi/simmer-tennis-live-gate",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/NovaCode37/claude-security-skills.git /home/runner/wor"
     },
     {
       "repo": "michalparkola/tapestry-skills",
@@ -103,27 +107,39 @@
     },
     {
       "repo": "jthack/threat-hunting-with-sigma-rules-skill",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/jthack/threat-hunting-with-sigma-rules-skill.git /home"
     },
     {
       "repo": "alirezarezvani/claude-code-skills-agents-factory",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/alirezarezvani/claude-code-skills-agents-factory.git /"
     },
     {
       "repo": "glebis/skill-studio",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/glebis/skill-studio.git /home/runner/work/claude-skill"
+    },
+    {
+      "repo": "libukai/awesome-agent-skills",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/libukai/awesome-agent-skills.git /home/runner/work/cla"
     },
     {
       "repo": "mturac/pluginpool",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/mturac/pluginpool.git /home/runner/work/claude-skill-f"
     },
     {
       "repo": "ofekron/better-agent",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/ofekron/better-agent.git /home/runner/work/claude-skil"
     },
     {
       "repo": "Get-Maito/newsletter-skills",
-      "error": "not in cache (--no-fetch)"
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/Get-Maito/newsletter-skills.git /home/runner/work/clau"
+    },
+    {
+      "repo": "tristan666666/agent-island",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/tristan666666/agent-island.git /home/runner/work/claud"
+    },
+    {
+      "repo": "sunnja69/akephalos",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/sunnja69/akephalos.git /home/runner/work/claude-skill-"
     }
   ],
   "api": {

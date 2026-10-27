@@ -1,0 +1,1 @@
+{"repo":"resilens/agentskills","skills":{"resilens-agentskills-c4-diagrams":{"description":"Use for architectural analysis and documentation; create C4 PlantUML diagrams with clear actors, system boundaries, containers, components, and relationships.","author":"Stephan","tools":"scripts/render.sh, scripts/build_explorer.sh","size":28374,"copies":[]}}}

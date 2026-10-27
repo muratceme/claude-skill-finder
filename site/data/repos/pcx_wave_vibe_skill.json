@@ -1,0 +1,1 @@
+{"repo":"pcx-wave/vibe-skill","skills":{"pcx-wave-vibe-skill-root":{"description":"Delegate a coding task to Mistral Vibe and supervise the result via git diff. Trigger: /vibe <instruction>. Claude orchestrates, Vibe codes. Also handles /vibe-report [--since N] [--project NAME] [--fails] — token/cost/failure report.","tools":"Bash, Read, Grep","size":28965,"copies":[]}}}

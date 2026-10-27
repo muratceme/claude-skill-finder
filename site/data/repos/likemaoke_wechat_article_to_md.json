@@ -1,0 +1,1 @@
+{"repo":"likemaoke/wechat-article-to-md","skills":{"likemaoke-wechat-article-to-md-root":{"description":"抓取微信公众号文章并转换为 Markdown 文档。使用脚本自动获取文章标题、作者、正文内容，保留格式并保存为 .md 文件，支持下载图片到本地。适用场景：用户要求抓取/获取/下载/保存微信公众号文章内容为 Markdown 格式，或给出 mp.weixin.qq.com 链接需要提取内容。支持 Obsidian 模式（使用 -obsidian 参数）。","size":983,"copies":[]}}}

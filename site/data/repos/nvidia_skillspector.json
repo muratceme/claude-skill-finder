@@ -1,0 +1,1 @@
+{"repo":"NVIDIA/SkillSpector","skills":{"nvidia-skillspector-skill-inspector":{"description":"Review AI agent skills before installation using NVIDIA SkillSpector and source-aware semantic review. Use when asked whether a skill or downloaded skill folder is safe, trustworthy, installable, over-permissioned, or malicious.","size":7553,"copies":[]}}}

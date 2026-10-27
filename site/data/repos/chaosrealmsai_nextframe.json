@@ -1,0 +1,1 @@
+{"repo":"ChaosRealmsAI/NextFrame","skills":{"chaosrealmsai-nextframe-crates-nf-agent-audio":{"description":"TTS + 词级对齐","size":573,"copies":[]},"chaosrealmsai-nextframe-crates-nf-agent-clips":{"description":"视频剪辑全链(download → transcribe → plan → cut → translate → karaoke)","size":1501,"copies":[]}}}

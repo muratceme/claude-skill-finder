@@ -1,0 +1,1 @@
+{"repo":"ozankasikci/sol-skill","skills":{"ozankasikci-sol-skill-sol":{"description":"Delegate implementation (or, when explicitly requested, research) to GPT-6.1 Sol (high reasoning; xhigh on request) via Codex CLI. Claude plans, orchestrates, and reviews; Sol writes the code.","author":"ozankasikci","tools":"Bash, Read, Write, Grep, Glob, Monitor","size":23398,"copies":[]}}}

@@ -1,0 +1,1 @@
+{"repo":"zy-zmc/tianming-skill","skills":{"zy-zmc-tianming-skill-root":{"description":"「天命」长篇小说协同创作系统。当用户使用「天命：大纲」「天命：规划」「天命：目录」 「天命：草案」「天命：正文」「天命：体检」「天命：存档」等指令进行多卷长篇小说写作， 或需要保证跨章节的世界观一致性、伏笔回收、节奏控制、文风稳定时使用本 Skill。 本系统依赖外部知识库：《世界基石.md》《世界观规则.md》《角色档案.md》《档案事件.md》《文风样本.md》。","tools":"Read, Glob, Grep","size":7545,"copies":[]}}}

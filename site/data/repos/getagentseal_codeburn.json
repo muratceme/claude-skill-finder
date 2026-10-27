@@ -1,0 +1,1 @@
+{"repo":"getagentseal/codeburn","skills":{"getagentseal-codeburn-codeburn-cost":{"description":"Show what AI coding tools cost today, from CodeBurn. Use when the user asks about today's AI spend or token use, or which model or project cost the most.","tools":"Bash(npx -y codeburn@0.9.27 today)","size":595,"copies":[]}}}

@@ -1,0 +1,1 @@
+{"repo":"HubWu42/hubwu-skills","skills":{"hubwu42-hubwu-skills-template":{"description":"一句话说明这个 skill 做什么、Claude/agent 何时该用它（discovery 阶段只读这两行，务必精准）。","size":314,"copies":[]},"hubwu42-hubwu-skills-zhuque-detect":{"description":"用腾讯朱雀检测一段中文文本是否 AI 生成，并导出官方「AI 生成检测报告单」PDF。当用户想检测文章/作文/论文的 AI 率、查 AIGC 占比、或要朱雀检测报告时使用。需本机真实 Chrome（带登录态）。","size":1700,"copies":[]}}}

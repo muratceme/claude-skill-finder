@@ -1,0 +1,1 @@
+{"repo":"MaxForAI/Tokenless","skills":{"maxforai-tokenless-claude-code-context-compression":{"description":"Use Tokenless for large files and noisy tool outputs before they enter context. Must be used when commands, Read output, diffs, logs, or search results are large.","size":9203,"copies":[]}}}
