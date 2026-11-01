@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-01T20:17:11.589Z",
-  "skills": 26547,
-  "repos": 1157,
-  "reposScanned": 1322,
+  "generatedAt": "2026-11-01T22:09:49.203Z",
+  "skills": 25704,
+  "repos": 1158,
+  "reposScanned": 1323,
   "reposFailed": 30,
   "official": 55,
-  "duplicatesMerged": 10985,
-  "durationSec": 715,
+  "duplicatesMerged": 10970,
+  "durationSec": 663,
   "apiUsed": true,
   "errors": [
     {
@@ -38,10 +38,6 @@
       "error": "skipped: 2829 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
-      "repo": "hashgraph-online/awesome-codex-plugins",
-      "error": "skipped: 2985 SKILL.md files (> 1200), looks like a mirror/dump"
-    },
-    {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
       "error": "skipped: 4166 SKILL.md files (> 1200), looks like a mirror/dump"
     },
@@ -56,6 +52,10 @@
     {
       "repo": "huifer/Claude-Ally-Health",
       "error": "duplicate of huifer/WellAlly-health (same HEAD)"
+    },
+    {
+      "repo": "santifer/career-ops",
+      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
     },
     {
       "repo": "nowork-studio/toprank",
