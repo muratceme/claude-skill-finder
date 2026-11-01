@@ -34,6 +34,7 @@ jobs:
       - name: Collect skills from GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_OPTIONS: --max-old-space-size=6144
         run: |
           EXTRA=""
           if [ -n "${{ github.event.inputs.max_repos }}" ]; then EXTRA="--max-repos ${{ github.event.inputs.max_repos }}"; fi

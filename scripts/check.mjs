@@ -21,6 +21,6 @@ for (const r of d.skills) {
 const shardDir = path.join(root, 'site', 'data', 'repos');
 if (!fs.existsSync(shardDir) || fs.readdirSync(shardDir).length < 10) problems.push('missing repo shards');
 const size = fs.statSync(file).size;
-if (size > 40 * 1024 * 1024) problems.push(`skills.json too large: ${size} bytes`);
+if (size > 30 * 1024 * 1024) problems.push(`skills.json too large: ${size} bytes (raise caps in scripts/sources.json only after checking the site still loads)`);
 if (problems.length) { console.error('check failed:\n - ' + problems.join('\n - ')); process.exit(1); }
 console.log(`check ok: ${d.skills.length} skills, ${Object.keys(d.repos).length} repos, ${(size / 1024 / 1024).toFixed(1)} MB`);

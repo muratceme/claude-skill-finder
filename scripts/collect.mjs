@@ -205,6 +205,9 @@ function extractSkills(r, dir, head, tree) {
     description = clip(description.replace(/\s+/g, ' '), 600);
     if (!hasFrontmatter && body.trim().length < 80) continue; // junk
     if (!description && body.trim().length < 120) continue;
+    // outside curated seeds, require a real frontmatter (name or description): the SKILL.md spec demands it,
+    // and files without it are almost always notes, templates or generated noise
+    if (!r.foundVia.has('seed') && !(hasFrontmatter && (toStr(data.name) || toStr(data.description)))) continue;
 
     const meta = data.metadata && typeof data.metadata === 'object' ? data.metadata : {};
     const metaBits = [toStr(meta.category), toStr(meta.domain), toStr(meta.tags), toStr(data.tags), toStr(data.category), toStr(data.keywords)].filter(Boolean).join(' ');
@@ -269,22 +272,38 @@ async function main() {
   // 1. seeds
   for (const s of SOURCES.seeds) addRepo(s.repo, { kind: s.kind, official: !!s.official, via: 'seed' });
 
-  // 1b. GitHub API discovery (optional)
+  // 1b. GitHub API discovery (optional): gather candidates, then keep only the best-starred ones.
+  //     Without a cap this grows to thousands of repos (personal mirrors, dumps) and blows up memory and output size.
   if (USE_API) {
+    const cand = new Map(); // key -> {fullName, stars, via}
+    const consider = (f, via) => {
+      if (f.archived || f.fork) return;
+      const key = f.fullName.toLowerCase();
+      if (repos.has(key)) return;
+      const c = cand.get(key);
+      if (c) { c.via.add(via); c.stars = Math.max(c.stars, f.stars || 0); } else cand.set(key, { fullName: f.fullName, stars: f.stars || 0, via: new Set([via]) });
+    };
     for (const topic of SOURCES.githubSearch.topics || []) {
       const found = await gh.searchReposByTopic(topic, SOURCES.githubSearch.maxReposPerQuery || 300);
-      if (!found.length) { if (!gh.apiStatus().enabled) break; continue; }
-      let n = 0;
-      for (const f of found) { if (f.archived || f.fork) continue; if (addRepo(f.fullName, { via: `topic:${topic}` })) n++; }
-      log(`topic:${topic} -> ${found.length} repos (${n} new)`);
+      if (!found.length && !gh.apiStatus().enabled) break;
+      for (const f of found) consider(f, `topic:${topic}`);
+      log(`topic:${topic} -> ${found.length} repos`);
     }
     for (const q of SOURCES.githubSearch.codeQueries || []) {
       if (!gh.apiStatus().enabled) break;
       const found = await gh.searchCode(q, SOURCES.githubSearch.maxReposPerQuery || 300);
-      let n = 0;
-      for (const f of found) { if (f.fork) continue; if (addRepo(f.fullName, { via: 'code-search' })) n++; }
-      log(`code:"${q}" -> ${found.length} repos (${n} new)`);
+      for (const f of found) consider({ ...f, stars: -1 }, 'code-search'); // stars unknown here; resolved below
+      log(`code:"${q}" -> ${found.length} repos`);
     }
+    // code-search hits carry no star count: look them up (cheap, one call each) so the ranking is fair
+    const unknown = [...cand.values()].filter(c => c.stars < 0);
+    await pool(unknown, 4, async (c) => { const info = await gh.repoInfo(c.fullName); c.stars = info && !info.notFound ? info.stars : 0; if (info?.archived || info?.fork) c.stars = -1; });
+    const minStars = Number(SOURCES.githubSearch.minStars ?? 0);
+    const ranked = [...cand.values()].filter(c => c.stars >= minStars).sort((a, b) => b.stars - a.stars || b.via.size - a.via.size);
+    const maxRepos = Number(SOURCES.githubSearch.maxRepos || 500);
+    let n = 0;
+    for (const c of ranked.slice(0, maxRepos)) if (addRepo(c.fullName, { via: [...c.via][0] })) n++;
+    log(`api discovery: ${cand.size} candidates, ${ranked.length} with >= ${minStars} stars, ${n} added (cap ${maxRepos})`);
   }
 
   // 2. clone seeds first; crawl awesome lists for more repos
@@ -299,6 +318,13 @@ async function main() {
       res.head = await headInfo(res.dir);
       res.tree = await treePaths(res.dir);
       res.skills = extractSkills(r, res.dir, res.head, res.tree);
+      const maxPerRepo = Number(SOURCES.crawl.maxSkillsPerRepo || 0);
+      if (maxPerRepo && res.skills.length > maxPerRepo && !r.foundVia.has('seed')) {
+        res.error = `skipped: ${res.skills.length} SKILL.md files (> ${maxPerRepo}), looks like a mirror/dump`;
+        res.skills = [];
+        log(`✗ ${r.fullName}: ${res.error}`);
+        return res;
+      }
       if (r.kind === 'awesome' || r.kind === 'collection' || r.official) res.links = readmeLinks(res.dir);
       log(`✓ ${r.fullName}: ${res.skills.length} skills${res.links.size ? `, ${res.links.size} links` : ''}`);
     } catch (e) {
@@ -457,7 +483,7 @@ async function main() {
   const rows = skills.map(s => {
     const flags = (s.hasScripts ? 1 : 0) | (s.hasReferences ? 2 : 0) | (s.hasAssets ? 4 : 0);
     const stdFile = (s.path ? s.path + '/' : '') + 'SKILL.md';
-    return [s.id, s.name, clip(s.description, 200), s.repo, s.path, s.category, s.subcategory, s.alsoIn.length ? s.alsoIn : 0, s.official ? 1 : 0, s.license || 0, s.version || 0, s.stars ?? 0, flags, s.plugin || 0, s.marketplacePlugin || 0, s.copies.length, s.file === stdFile ? 0 : s.file, s.added];
+    return [s.id, s.name, clip(s.description, 180), s.repo, s.path, s.category, s.subcategory, s.alsoIn.length ? s.alsoIn : 0, s.official ? 1 : 0, s.license || 0, s.version || 0, s.stars ?? 0, flags, s.plugin || 0, s.marketplacePlugin || 0, s.copies.length, s.file === stdFile ? 0 : s.file, s.added];
   });
   const shardDir = path.join(path.dirname(OUT), 'repos');
   fs.rmSync(shardDir, { recursive: true, force: true });

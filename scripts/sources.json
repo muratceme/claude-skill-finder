@@ -27,13 +27,17 @@
     { "repo": "ckreiling/mcp-server-docker", "kind": "collection" }
   ],
   "githubSearch": {
+    "$comment": "Repos found through the API are ranked by stars and capped as a whole (maxRepos); repos below minStars are ignored because 0-star topic hits are mostly personal dumps.",
     "topics": ["claude-skills", "claude-skill", "claude-code-skills", "agent-skills", "agentskills", "anthropic-skills", "claude-code-plugins"],
     "codeQueries": ["filename:SKILL.md \"description:\" claude", "filename:SKILL.md path:skills"],
-    "maxReposPerQuery": 300
+    "maxReposPerQuery": 300,
+    "maxRepos": 500,
+    "minStars": 3
   },
   "crawl": {
     "followAwesomeLinks": true,
     "maxDiscoveredRepos": 800,
+    "maxSkillsPerRepo": 1200,
     "aggregators": ["sickn33/antigravity-awesome-skills", "VoltAgent/awesome-agent-skills", "borghei/Claude-Skills", "OneWave-AI/claude-skills"],
     "cloneTimeoutMs": 150000,
     "concurrency": 6,

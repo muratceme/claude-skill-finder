@@ -6,6 +6,12 @@ on:
     paths:
       - 'site/**'
       - '.github/workflows/deploy.yml'
+  # Commits made by the data workflow use GITHUB_TOKEN and therefore never fire `push`;
+  # chain on its completion instead so a nightly refresh always reaches the site.
+  workflow_run:
+    workflows: ["Update skills data"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,10 +25,11 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    # No `environment:` block on purpose: the auto-created github-pages environment only allows the
+    # branch that was the default when Pages was first enabled, which blocked deploys from main.
+    # actions/deploy-pages creates the github-pages deployment itself.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
