@@ -24,7 +24,8 @@
     { "repo": "expo/skills", "kind": "collection" },
     { "repo": "huggingface/skills", "kind": "collection" },
     { "repo": "sickn33/antigravity-awesome-skills", "kind": "collection" },
-    { "repo": "ckreiling/mcp-server-docker", "kind": "collection" }
+    { "repo": "ckreiling/mcp-server-docker", "kind": "collection" },
+    { "repo": "muratceme/qlik-script-studio", "kind": "collection" }
   ],
   "githubSearch": {
     "$comment": "Repos found through the API are ranked by stars and capped as a whole (maxRepos); repos below minStars are ignored because 0-star topic hits are mostly personal dumps.",
