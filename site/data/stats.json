@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-01T22:09:49.203Z",
-  "skills": 25704,
-  "repos": 1158,
+  "generatedAt": "2026-11-02T11:08:19.356Z",
+  "skills": 25768,
+  "repos": 1160,
   "reposScanned": 1323,
-  "reposFailed": 30,
+  "reposFailed": 29,
   "official": 55,
-  "duplicatesMerged": 10970,
-  "durationSec": 663,
+  "duplicatesMerged": 11039,
+  "durationSec": 715,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 8895 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 8966 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3029 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3129 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -82,8 +82,8 @@
       "error": "skipped: 2252 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
-      "repo": "half144/cutaway",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/half144/cutaway.git /home/runner/work/claude-skill-fin"
+      "repo": "9929y/genai-mesh-gradient",
+      "error": "duplicate of 9929y/mesh-gradient-generation (same HEAD)"
     },
     {
       "repo": "username/pdf-analyzer",
@@ -124,10 +124,6 @@
     {
       "repo": "ofekron/better-agent",
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/ofekron/better-agent.git /home/runner/work/claude-skil"
-    },
-    {
-      "repo": "Get-Maito/newsletter-skills",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/Get-Maito/newsletter-skills.git /home/runner/work/clau"
     }
   ],
   "api": {
