@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-02T11:08:19.356Z",
-  "skills": 25768,
-  "repos": 1160,
+  "generatedAt": "2026-11-03T10:59:12.819Z",
+  "skills": 25819,
+  "repos": 1162,
   "reposScanned": 1323,
-  "reposFailed": 29,
+  "reposFailed": 28,
   "official": 55,
-  "duplicatesMerged": 11039,
-  "durationSec": 715,
+  "duplicatesMerged": 10901,
+  "durationSec": 807,
   "apiUsed": true,
   "errors": [
     {
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3129 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3229 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -112,10 +112,6 @@
     {
       "repo": "glebis/skill-studio",
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/glebis/skill-studio.git /home/runner/work/claude-skill"
-    },
-    {
-      "repo": "libukai/awesome-agent-skills",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/libukai/awesome-agent-skills.git /home/runner/work/cla"
     },
     {
       "repo": "mturac/pluginpool",
