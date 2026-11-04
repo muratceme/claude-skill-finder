@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-03T10:59:12.819Z",
-  "skills": 25819,
+  "generatedAt": "2026-11-04T11:02:18.293Z",
+  "skills": 25852,
   "repos": 1162,
   "reposScanned": 1323,
-  "reposFailed": 28,
+  "reposFailed": 29,
   "official": 55,
-  "duplicatesMerged": 10901,
-  "durationSec": 807,
+  "duplicatesMerged": 10928,
+  "durationSec": 771,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 8966 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 8985 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3229 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3329 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -36,6 +36,10 @@
     {
       "repo": "mohitagw15856/pm-claude-skills",
       "error": "skipped: 2829 SKILL.md files (> 1200), looks like a mirror/dump"
+    },
+    {
+      "repo": "hashgraph-online/awesome-codex-plugins",
+      "error": "skipped: 3091 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
