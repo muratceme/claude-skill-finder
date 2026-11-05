@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-04T11:02:18.293Z",
-  "skills": 25852,
-  "repos": 1162,
+  "generatedAt": "2026-11-05T10:57:44.466Z",
+  "skills": 25788,
+  "repos": 1166,
   "reposScanned": 1323,
-  "reposFailed": 29,
+  "reposFailed": 30,
   "official": 55,
-  "duplicatesMerged": 10928,
-  "durationSec": 771,
+  "duplicatesMerged": 11053,
+  "durationSec": 654,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 8985 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 8987 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3329 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3429 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -31,15 +31,11 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 23383 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 23389 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
       "error": "skipped: 2829 SKILL.md files (> 1200), looks like a mirror/dump"
-    },
-    {
-      "repo": "hashgraph-online/awesome-codex-plugins",
-      "error": "skipped: 3091 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -52,6 +48,10 @@
     {
       "repo": "nowork-studio/NotFair",
       "error": "duplicate of nowork-studio/notfair-plugin (same HEAD)"
+    },
+    {
+      "repo": "cbrock84/headcount",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/cbrock84/headcount.git /home/runner/work/claude-skill-"
     },
     {
       "repo": "huifer/Claude-Ally-Health",
@@ -83,7 +83,11 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2252 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 4366 SKILL.md files (> 1200), looks like a mirror/dump"
+    },
+    {
+      "repo": "tjqscott/dory",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/tjqscott/dory.git /home/runner/work/claude-skill-finde"
     },
     {
       "repo": "9929y/genai-mesh-gradient",
