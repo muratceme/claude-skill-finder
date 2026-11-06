@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-05T10:57:44.466Z",
-  "skills": 25788,
-  "repos": 1166,
+  "generatedAt": "2026-11-06T10:59:40.576Z",
+  "skills": 27149,
+  "repos": 1161,
   "reposScanned": 1323,
-  "reposFailed": 30,
-  "official": 55,
-  "duplicatesMerged": 11053,
-  "durationSec": 654,
+  "reposFailed": 31,
+  "official": 62,
+  "duplicatesMerged": 11661,
+  "durationSec": 740,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 8987 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9013 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -19,11 +19,11 @@
     },
     {
       "repo": "jeremylongshore/tons-of-skills-marketplace",
-      "error": "skipped: 5756 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 5762 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3429 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3442 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -31,11 +31,15 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 23389 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 23397 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
       "error": "skipped: 2829 SKILL.md files (> 1200), looks like a mirror/dump"
+    },
+    {
+      "repo": "hashgraph-online/awesome-codex-plugins",
+      "error": "skipped: 3114 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -83,7 +87,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 4366 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2252 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
