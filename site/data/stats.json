@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-06T10:59:40.576Z",
-  "skills": 27149,
-  "repos": 1161,
+  "generatedAt": "2026-11-07T10:11:59.590Z",
+  "skills": 26373,
+  "repos": 1160,
   "reposScanned": 1323,
-  "reposFailed": 31,
+  "reposFailed": 30,
   "official": 62,
-  "duplicatesMerged": 11661,
+  "duplicatesMerged": 11682,
   "durationSec": 740,
   "apiUsed": true,
   "errors": [
@@ -36,10 +36,6 @@
     {
       "repo": "mohitagw15856/pm-claude-skills",
       "error": "skipped: 2829 SKILL.md files (> 1200), looks like a mirror/dump"
-    },
-    {
-      "repo": "hashgraph-online/awesome-codex-plugins",
-      "error": "skipped: 3114 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -87,7 +83,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2252 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2437 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
