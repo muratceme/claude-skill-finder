@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-07T10:11:59.590Z",
-  "skills": 26373,
-  "repos": 1160,
+  "generatedAt": "2026-11-08T10:23:55.261Z",
+  "skills": 25684,
+  "repos": 1159,
   "reposScanned": 1323,
-  "reposFailed": 30,
+  "reposFailed": 31,
   "official": 62,
-  "duplicatesMerged": 11682,
-  "durationSec": 740,
+  "duplicatesMerged": 11447,
+  "durationSec": 615,
   "apiUsed": true,
   "errors": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "error": "skipped: 2829 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2841 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -122,12 +122,16 @@
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/glebis/skill-studio.git /home/runner/work/claude-skill"
     },
     {
+      "repo": "tonone-ai/tonone",
+      "error": "skipped: 1588 SKILL.md files (> 1200), looks like a mirror/dump"
+    },
+    {
       "repo": "mturac/pluginpool",
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/mturac/pluginpool.git /home/runner/work/claude-skill-f"
     },
     {
-      "repo": "ofekron/better-agent",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/ofekron/better-agent.git /home/runner/work/claude-skil"
+      "repo": "infai-tech/claudemd-auditor-skill",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/infai-tech/claudemd-auditor-skill.git /home/runner/wor"
     }
   ],
   "api": {
