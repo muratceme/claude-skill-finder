@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-08T10:23:55.261Z",
-  "skills": 25684,
+  "generatedAt": "2026-11-09T11:35:28.919Z",
+  "skills": 25789,
   "repos": 1159,
   "reposScanned": 1323,
-  "reposFailed": 31,
+  "reposFailed": 28,
   "official": 62,
-  "duplicatesMerged": 11447,
-  "durationSec": 615,
+  "duplicatesMerged": 11488,
+  "durationSec": 681,
   "apiUsed": true,
   "errors": [
     {
@@ -31,7 +31,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 23397 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 23406 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
@@ -68,10 +68,6 @@
     {
       "repo": "Forward-Future/loop-library",
       "error": "duplicate of Forward-Future/loopy (same HEAD)"
-    },
-    {
-      "repo": "mturac/recsys-pipeline-architect",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/mturac/recsys-pipeline-architect.git /home/runner/work"
     },
     {
       "repo": "example-org/sdk",
@@ -124,14 +120,6 @@
     {
       "repo": "tonone-ai/tonone",
       "error": "skipped: 1588 SKILL.md files (> 1200), looks like a mirror/dump"
-    },
-    {
-      "repo": "mturac/pluginpool",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/mturac/pluginpool.git /home/runner/work/claude-skill-f"
-    },
-    {
-      "repo": "infai-tech/claudemd-auditor-skill",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/infai-tech/claudemd-auditor-skill.git /home/runner/wor"
     }
   ],
   "api": {
