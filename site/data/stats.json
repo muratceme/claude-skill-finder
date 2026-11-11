@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-10T11:17:29.268Z",
-  "skills": 26609,
-  "repos": 1154,
+  "generatedAt": "2026-11-11T10:59:47.376Z",
+  "skills": 25522,
+  "repos": 1156,
   "reposScanned": 1323,
-  "reposFailed": 30,
+  "reposFailed": 31,
   "official": 62,
-  "duplicatesMerged": 11544,
-  "durationSec": 783,
+  "duplicatesMerged": 11727,
+  "durationSec": 653,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9077 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9445 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -78,6 +78,10 @@
       "error": "duplicate of anthropics/claude-cookbooks (same HEAD)"
     },
     {
+      "repo": "degausai/wonda",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/degausai/wonda.git /home/runner/work/claude-skill-find"
+    },
+    {
       "repo": "openaccountants/openaccountants",
       "error": "skipped: 2437 SKILL.md files (> 1200), looks like a mirror/dump"
     },
@@ -119,7 +123,7 @@
     },
     {
       "repo": "tonone-ai/tonone",
-      "error": "skipped: 1685 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 1690 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "gyujeongion/claude-code-sandbox-gate",

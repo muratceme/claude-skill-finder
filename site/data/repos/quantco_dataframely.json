@@ -1,1 +1,0 @@
-{"repo":"Quantco/dataframely","skills":{"quantco-dataframely-root":{"description":"Best practices for polars data processing with dataframely. Covers definitions of Schema and Collection, usage of .validate() and .filter(), type hints, and testing. Use when writing or modifying code involving dataframely or polars data frames.","size":9433,"copies":[]}}}
