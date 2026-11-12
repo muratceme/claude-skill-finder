@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-11T10:59:47.376Z",
-  "skills": 25522,
-  "repos": 1156,
+  "generatedAt": "2026-11-12T11:11:44.701Z",
+  "skills": 25920,
+  "repos": 1153,
   "reposScanned": 1323,
-  "reposFailed": 31,
-  "official": 62,
-  "duplicatesMerged": 11727,
-  "durationSec": 653,
+  "reposFailed": 30,
+  "official": 79,
+  "duplicatesMerged": 11936,
+  "durationSec": 777,
   "apiUsed": true,
   "errors": [
     {
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3442 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3444 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -35,7 +35,7 @@
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "error": "skipped: 2841 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2982 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -56,10 +56,6 @@
     {
       "repo": "huifer/Claude-Ally-Health",
       "error": "duplicate of huifer/WellAlly-health (same HEAD)"
-    },
-    {
-      "repo": "santifer/career-ops",
-      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
     },
     {
       "repo": "nowork-studio/toprank",
@@ -83,7 +79,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2437 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2404 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
