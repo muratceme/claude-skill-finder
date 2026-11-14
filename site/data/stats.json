@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-13T11:04:42.024Z",
-  "skills": 26760,
-  "repos": 1152,
+  "generatedAt": "2026-11-14T10:28:11.427Z",
+  "skills": 26546,
+  "repos": 1153,
   "reposScanned": 1323,
   "reposFailed": 31,
   "official": 79,
-  "duplicatesMerged": 11787,
-  "durationSec": 702,
+  "duplicatesMerged": 11740,
+  "durationSec": 680,
   "apiUsed": true,
   "errors": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "repo": "jeremylongshore/tons-of-skills-marketplace",
-      "error": "skipped: 5762 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 5736 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
