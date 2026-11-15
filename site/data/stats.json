@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-14T10:28:11.427Z",
-  "skills": 26546,
-  "repos": 1153,
+  "generatedAt": "2026-11-15T10:56:39.118Z",
+  "skills": 25682,
+  "repos": 1154,
   "reposScanned": 1323,
   "reposFailed": 31,
   "official": 79,
-  "duplicatesMerged": 11740,
-  "durationSec": 680,
+  "duplicatesMerged": 11691,
+  "durationSec": 648,
   "apiUsed": true,
   "errors": [
     {
@@ -31,7 +31,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 23431 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3175 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
@@ -83,7 +83,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2303 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2496 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
