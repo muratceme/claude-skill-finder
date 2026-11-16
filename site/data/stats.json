@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-15T10:56:39.118Z",
-  "skills": 25682,
-  "repos": 1154,
+  "generatedAt": "2026-11-16T11:16:45.753Z",
+  "skills": 25565,
+  "repos": 1157,
   "reposScanned": 1323,
   "reposFailed": 31,
   "official": 79,
-  "duplicatesMerged": 11691,
-  "durationSec": 648,
+  "duplicatesMerged": 11595,
+  "durationSec": 698,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9451 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9460 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -31,7 +31,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 3175 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3186 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
@@ -83,11 +83,15 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2496 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2575 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/tjqscott/dory.git /home/runner/work/claude-skill-finde"
+    },
+    {
+      "repo": "kyy-logs/code-review-skill",
+      "error": "duplicate of kyy-logs/code-review-gate-skill (same HEAD)"
     },
     {
       "repo": "9929y/genai-mesh-gradient",
@@ -128,10 +132,6 @@
     {
       "repo": "gyujeongion/claude-code-sandbox-gate",
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/gyujeongion/claude-code-sandbox-gate.git /home/runner/"
-    },
-    {
-      "repo": "gyujeongion/claude-code-goal-loop",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/gyujeongion/claude-code-goal-loop.git /home/runner/wor"
     }
   ],
   "api": {

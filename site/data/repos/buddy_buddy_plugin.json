@@ -1,0 +1,1 @@
+{"repo":"buddy/buddy-plugin","skills":{"buddy-buddy-plugin-buddy":{"description":"Deploy apps to Buddy sandboxes, publish artifacts, create tunnels, manage domains, configure distributions, and run CI/CD pipelines using `bdy` CLI. Triggers on: deploy, sandbox, tunnel, expose, artifact, static site, publish, domain, distribution, pipeline, CI/CD.","size":6582,"copies":[]}}}
