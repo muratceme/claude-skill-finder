@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-16T11:16:45.753Z",
-  "skills": 25565,
-  "repos": 1157,
+  "generatedAt": "2026-11-17T11:55:32.670Z",
+  "skills": 25906,
+  "repos": 1158,
   "reposScanned": 1323,
   "reposFailed": 31,
   "official": 79,
-  "duplicatesMerged": 11595,
-  "durationSec": 698,
+  "duplicatesMerged": 11807,
+  "durationSec": 593,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9460 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9523 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3445 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3446 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -83,7 +83,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2575 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2589 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
