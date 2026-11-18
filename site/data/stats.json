@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-17T11:55:32.670Z",
-  "skills": 25906,
-  "repos": 1158,
+  "generatedAt": "2026-11-18T11:45:40.873Z",
+  "skills": 25997,
+  "repos": 1157,
   "reposScanned": 1323,
-  "reposFailed": 31,
+  "reposFailed": 32,
   "official": 79,
-  "duplicatesMerged": 11807,
-  "durationSec": 593,
+  "duplicatesMerged": 11771,
+  "durationSec": 740,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9523 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9631 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3446 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3452 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -44,6 +44,10 @@
     {
       "repo": "K-Dense-AI/claude-scientific-skills",
       "error": "duplicate of K-Dense-AI/scientific-agent-skills (same HEAD)"
+    },
+    {
+      "repo": "avelikiy/great_cto",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/avelikiy/great_cto.git /home/runner/work/claude-skill-"
     },
     {
       "repo": "nowork-studio/NotFair",
@@ -83,7 +87,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2589 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2594 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
