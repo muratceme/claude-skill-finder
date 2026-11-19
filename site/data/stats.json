@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-18T11:45:40.873Z",
-  "skills": 25997,
+  "generatedAt": "2026-11-19T11:42:45.883Z",
+  "skills": 26152,
   "repos": 1157,
   "reposScanned": 1323,
   "reposFailed": 32,
   "official": 79,
-  "duplicatesMerged": 11771,
-  "durationSec": 740,
+  "duplicatesMerged": 11804,
+  "durationSec": 666,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9631 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9673 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3452 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3453 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -31,7 +31,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 3186 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3196 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
@@ -87,7 +87,7 @@
     },
     {
       "repo": "openaccountants/openaccountants",
-      "error": "skipped: 2594 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 2596 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "tjqscott/dory",
