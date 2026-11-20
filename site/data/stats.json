@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-19T11:42:45.883Z",
-  "skills": 26152,
+  "generatedAt": "2026-11-20T11:39:35.618Z",
+  "skills": 25933,
   "repos": 1157,
   "reposScanned": 1323,
   "reposFailed": 32,
   "official": 79,
-  "duplicatesMerged": 11804,
-  "durationSec": 666,
+  "duplicatesMerged": 12020,
+  "durationSec": 695,
   "apiUsed": true,
   "errors": [
     {
@@ -31,7 +31,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 3196 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3206 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
