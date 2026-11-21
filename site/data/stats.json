@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-20T11:39:35.618Z",
-  "skills": 25933,
+  "generatedAt": "2026-11-21T11:03:54.591Z",
+  "skills": 26146,
   "repos": 1157,
   "reposScanned": 1323,
   "reposFailed": 32,
   "official": 79,
-  "duplicatesMerged": 12020,
-  "durationSec": 695,
+  "duplicatesMerged": 12290,
+  "durationSec": 524,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9673 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9799 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -31,7 +31,7 @@
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
-      "error": "skipped: 3206 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3222 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
