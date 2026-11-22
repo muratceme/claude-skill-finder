@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-21T11:03:54.591Z",
-  "skills": 26146,
-  "repos": 1157,
+  "generatedAt": "2026-11-22T11:23:14.378Z",
+  "skills": 25993,
+  "repos": 1156,
   "reposScanned": 1323,
-  "reposFailed": 32,
+  "reposFailed": 33,
   "official": 79,
-  "duplicatesMerged": 12290,
-  "durationSec": 524,
+  "duplicatesMerged": 12188,
+  "durationSec": 610,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9799 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 9874 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -23,7 +23,7 @@
     },
     {
       "repo": "LeoYeAI/agent-master-skills",
-      "error": "skipped: 3453 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3459 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -108,6 +108,10 @@
     {
       "repo": "owner/repo",
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/owner/repo.git /home/runner/work/claude-skill-finder/c"
+    },
+    {
+      "repo": "Ali-expandings/wise-men-flash",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/Ali-expandings/wise-men-flash.git /home/runner/work/cl"
     },
     {
       "repo": "raintree-technology/claude-starter",
