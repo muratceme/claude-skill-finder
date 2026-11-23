@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-22T11:23:14.378Z",
-  "skills": 25993,
-  "repos": 1156,
+  "generatedAt": "2026-11-23T12:34:43.100Z",
+  "skills": 25982,
+  "repos": 1154,
   "reposScanned": 1323,
-  "reposFailed": 33,
+  "reposFailed": 34,
   "official": 79,
-  "duplicatesMerged": 12188,
-  "durationSec": 610,
+  "duplicatesMerged": 12323,
+  "durationSec": 600,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 9874 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 10017 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -62,10 +62,6 @@
       "error": "duplicate of huifer/WellAlly-health (same HEAD)"
     },
     {
-      "repo": "santifer/career-ops",
-      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
-    },
-    {
       "repo": "nowork-studio/toprank",
       "error": "duplicate of nowork-studio/notfair-plugin (same HEAD)"
     },
@@ -110,8 +106,16 @@
       "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/owner/repo.git /home/runner/work/claude-skill-finder/c"
     },
     {
-      "repo": "Ali-expandings/wise-men-flash",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/Ali-expandings/wise-men-flash.git /home/runner/work/cl"
+      "repo": "moveju112/skill_verify",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/moveju112/skill_verify.git /home/runner/work/claude-sk"
+    },
+    {
+      "repo": "hanshs474/kavel-image-skill",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/hanshs474/kavel-image-skill.git /home/runner/work/clau"
+    },
+    {
+      "repo": "moveju112/rule-architect",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/moveju112/rule-architect.git /home/runner/work/claude-"
     },
     {
       "repo": "raintree-technology/claude-starter",
