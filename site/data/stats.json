@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-23T12:34:43.100Z",
-  "skills": 25982,
+  "generatedAt": "2026-11-24T13:45:46.183Z",
+  "skills": 26051,
   "repos": 1154,
   "reposScanned": 1323,
   "reposFailed": 34,
   "official": 79,
-  "duplicatesMerged": 12323,
-  "durationSec": 600,
+  "duplicatesMerged": 12335,
+  "durationSec": 614,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 10017 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 10035 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
