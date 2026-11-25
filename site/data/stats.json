@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-24T13:45:46.183Z",
-  "skills": 26051,
+  "generatedAt": "2026-11-25T12:55:41.787Z",
+  "skills": 25925,
   "repos": 1154,
   "reposScanned": 1323,
-  "reposFailed": 34,
-  "official": 79,
-  "duplicatesMerged": 12335,
-  "durationSec": 614,
+  "reposFailed": 36,
+  "official": 84,
+  "duplicatesMerged": 12405,
+  "durationSec": 615,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 10035 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 10037 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -62,12 +62,20 @@
       "error": "duplicate of huifer/WellAlly-health (same HEAD)"
     },
     {
+      "repo": "santifer/career-ops",
+      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
+    },
+    {
       "repo": "nowork-studio/toprank",
       "error": "duplicate of nowork-studio/notfair-plugin (same HEAD)"
     },
     {
       "repo": "Forward-Future/loop-library",
       "error": "duplicate of Forward-Future/loopy (same HEAD)"
+    },
+    {
+      "repo": "BuyWhere/buywhere-mcp",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/BuyWhere/buywhere-mcp.git /home/runner/work/claude-ski"
     },
     {
       "repo": "example-org/sdk",
