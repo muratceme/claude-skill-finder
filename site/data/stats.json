@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-26T12:31:31.564Z",
-  "skills": 25929,
-  "repos": 1154,
+  "generatedAt": "2026-11-27T12:19:21.447Z",
+  "skills": 25900,
+  "repos": 1157,
   "reposScanned": 1323,
-  "reposFailed": 36,
+  "reposFailed": 33,
   "official": 84,
-  "duplicatesMerged": 12461,
-  "durationSec": 665,
+  "duplicatesMerged": 12863,
+  "durationSec": 712,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 10037 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 10075 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -35,7 +35,7 @@
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "error": "skipped: 2982 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3032 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -44,10 +44,6 @@
     {
       "repo": "K-Dense-AI/claude-scientific-skills",
       "error": "duplicate of K-Dense-AI/scientific-agent-skills (same HEAD)"
-    },
-    {
-      "repo": "avelikiy/great_cto",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/avelikiy/great_cto.git /home/runner/work/claude-skill-"
     },
     {
       "repo": "nowork-studio/NotFair",
@@ -62,8 +58,8 @@
       "error": "duplicate of huifer/WellAlly-health (same HEAD)"
     },
     {
-      "repo": "santifer/career-ops",
-      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
+      "repo": "avelikiy/great_cto",
+      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/avelikiy/great_cto.git /home/runner/work/claude-skill-"
     },
     {
       "repo": "nowork-studio/toprank",
@@ -72,10 +68,6 @@
     {
       "repo": "Forward-Future/loop-library",
       "error": "duplicate of Forward-Future/loopy (same HEAD)"
-    },
-    {
-      "repo": "BuyWhere/buywhere-mcp",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/BuyWhere/buywhere-mcp.git /home/runner/work/claude-ski"
     },
     {
       "repo": "example-org/sdk",
@@ -148,10 +140,6 @@
     {
       "repo": "tonone-ai/tonone",
       "error": "skipped: 1690 SKILL.md files (> 1200), looks like a mirror/dump"
-    },
-    {
-      "repo": "gyujeongion/claude-code-sandbox-gate",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/gyujeongion/claude-code-sandbox-gate.git /home/runner/"
     }
   ],
   "api": {
