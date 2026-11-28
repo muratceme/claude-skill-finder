@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-27T12:19:21.447Z",
-  "skills": 25900,
-  "repos": 1157,
+  "generatedAt": "2026-11-28T11:49:42.019Z",
+  "skills": 26736,
+  "repos": 1160,
   "reposScanned": 1323,
-  "reposFailed": 33,
+  "reposFailed": 34,
   "official": 84,
-  "duplicatesMerged": 12863,
-  "durationSec": 712,
+  "duplicatesMerged": 13042,
+  "durationSec": 653,
   "apiUsed": true,
   "errors": [
     {
       "repo": "sickn33/agentic-awesome-skills",
-      "error": "skipped: 10075 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 10108 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Auto-Empirical-Research-Skills",
@@ -34,8 +34,12 @@
       "error": "skipped: 3233 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
+      "repo": "hashgraph-online/awesome-codex-plugins",
+      "error": "skipped: 3866 SKILL.md files (> 1200), looks like a mirror/dump"
+    },
+    {
       "repo": "mohitagw15856/pm-claude-skills",
-      "error": "skipped: 3032 SKILL.md files (> 1200), looks like a mirror/dump"
+      "error": "skipped: 3058 SKILL.md files (> 1200), looks like a mirror/dump"
     },
     {
       "repo": "brycewang-stanford/Awesome-Journal-Skills",
@@ -50,12 +54,12 @@
       "error": "duplicate of nowork-studio/notfair-plugin (same HEAD)"
     },
     {
-      "repo": "cbrock84/headcount",
-      "error": "Command failed: git clone -q --depth 1 --single-branch --no-tags --filter=blob:limit=512k --no-checkout -c core.longpaths=true https://github.com/cbrock84/headcount.git /home/runner/work/claude-skill-"
-    },
-    {
       "repo": "huifer/Claude-Ally-Health",
       "error": "duplicate of huifer/WellAlly-health (same HEAD)"
+    },
+    {
+      "repo": "santifer/career-ops",
+      "error": "duplicate of career-ops-hq/career-ops (same HEAD)"
     },
     {
       "repo": "avelikiy/great_cto",
